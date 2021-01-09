@@ -62,29 +62,11 @@
     <Compile Include="IsolationRooms.Designer.cs">
       <DependentUpon>IsolationRooms.cs</DependentUpon>
     </Compile>
-    <Compile Include="roomOccupancy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="roomOccupancy.Designer.cs">
-      <DependentUpon>roomOccupancy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="roomReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="roomReservation.Designer.cs">
-      <DependentUpon>roomReservation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Adding_meetings.resx" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="roomOccupancy.resx">
-      <DependentUpon>roomOccupancy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="roomReservation.resx">
-      <DependentUpon>roomReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
