@@ -16,5 +16,10 @@ namespace RezerwacjaSal
         {
             InitializeComponent();
         }
+
+        private void labelReservePatientRoom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,16 +29,16 @@ namespace RezerwacjaSal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ColumnDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnRoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewPatientRooms = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,6 @@ namespace RezerwacjaSal
             this.labelFrom = new System.Windows.Forms.Label();
             this.textBoxFrom = new System.Windows.Forms.TextBox();
             this.labelReservePatientRoom = new System.Windows.Forms.Label();
-            this.checkBoxInfectious = new System.Windows.Forms.CheckBox();
             this.labelTo = new System.Windows.Forms.Label();
             this.textBoxTo = new System.Windows.Forms.TextBox();
             this.labelFirstNme = new System.Windows.Forms.Label();
@@ -85,6 +84,7 @@ namespace RezerwacjaSal
             this.panelReservePatientRoom = new System.Windows.Forms.Panel();
             this.groupBoxRequirements = new System.Windows.Forms.GroupBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.checkBoxInfectious = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHasLinkTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequiredEquipment)).BeginInit();
@@ -96,8 +96,8 @@ namespace RezerwacjaSal
             // ColumnDepartment
             // 
             this.ColumnDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.NullValue = "Onkologia";
-            this.ColumnDepartment.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.NullValue = "Onkologia";
+            this.ColumnDepartment.DefaultCellStyle = dataGridViewCellStyle21;
             this.ColumnDepartment.HeaderText = "Oddział";
             this.ColumnDepartment.Name = "ColumnDepartment";
             this.ColumnDepartment.ReadOnly = true;
@@ -106,8 +106,8 @@ namespace RezerwacjaSal
             // ColumnRoomNr
             // 
             this.ColumnRoomNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.NullValue = "751";
-            this.ColumnRoomNr.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.NullValue = "751";
+            this.ColumnRoomNr.DefaultCellStyle = dataGridViewCellStyle22;
             this.ColumnRoomNr.FillWeight = 50F;
             this.ColumnRoomNr.HeaderText = "Numer sali";
             this.ColumnRoomNr.MaxInputLength = 9999999;
@@ -132,8 +132,8 @@ namespace RezerwacjaSal
             // 
             // ColumnAvailablePlaces
             // 
-            dataGridViewCellStyle3.NullValue = "Tak";
-            this.ColumnAvailablePlaces.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.NullValue = "Tak";
+            this.ColumnAvailablePlaces.DefaultCellStyle = dataGridViewCellStyle23;
             this.ColumnAvailablePlaces.HeaderText = "Wolne miejsca";
             this.ColumnAvailablePlaces.Name = "ColumnAvailablePlaces";
             this.ColumnAvailablePlaces.ReadOnly = true;
@@ -141,8 +141,8 @@ namespace RezerwacjaSal
             // ColumnBuilding
             // 
             this.ColumnBuilding.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.NullValue = "C";
-            this.ColumnBuilding.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.NullValue = "C";
+            this.ColumnBuilding.DefaultCellStyle = dataGridViewCellStyle24;
             this.ColumnBuilding.HeaderText = "Budynek";
             this.ColumnBuilding.Name = "ColumnBuilding";
             this.ColumnBuilding.ReadOnly = true;
@@ -150,8 +150,8 @@ namespace RezerwacjaSal
             // ColumnHasLinkTo
             // 
             this.ColumnHasLinkTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.NullValue = "A, D, E";
-            this.ColumnHasLinkTo.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.NullValue = "A, D, E";
+            this.ColumnHasLinkTo.DefaultCellStyle = dataGridViewCellStyle25;
             this.ColumnHasLinkTo.HeaderText = "Ma połączenie z";
             this.ColumnHasLinkTo.Name = "ColumnHasLinkTo";
             this.ColumnHasLinkTo.ReadOnly = true;
@@ -165,9 +165,9 @@ namespace RezerwacjaSal
             // 
             // Column5
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = "Wybierz";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.NullValue = "Wybierz";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle26;
             this.Column5.HeaderText = "";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -243,19 +243,10 @@ namespace RezerwacjaSal
             this.labelReservePatientRoom.ForeColor = System.Drawing.SystemColors.WindowText;
             this.labelReservePatientRoom.Location = new System.Drawing.Point(3, 10);
             this.labelReservePatientRoom.Name = "labelReservePatientRoom";
-            this.labelReservePatientRoom.Size = new System.Drawing.Size(188, 20);
+            this.labelReservePatientRoom.Size = new System.Drawing.Size(150, 20);
             this.labelReservePatientRoom.TabIndex = 1;
-            this.labelReservePatientRoom.Text = "Rezerwuj salę chorych";
-            // 
-            // checkBoxInfectious
-            // 
-            this.checkBoxInfectious.AutoSize = true;
-            this.checkBoxInfectious.Location = new System.Drawing.Point(14, 127);
-            this.checkBoxInfectious.Name = "checkBoxInfectious";
-            this.checkBoxInfectious.Size = new System.Drawing.Size(68, 17);
-            this.checkBoxInfectious.TabIndex = 19;
-            this.checkBoxInfectious.Text = "Zakaźna";
-            this.checkBoxInfectious.UseVisualStyleBackColor = true;
+            this.labelReservePatientRoom.Text = "Rezerwuj izolatkę";
+            this.labelReservePatientRoom.Click += new System.EventHandler(this.labelReservePatientRoom_Click);
             // 
             // labelTo
             // 
@@ -423,9 +414,9 @@ namespace RezerwacjaSal
             // dataGridViewButtonColumnDelete
             // 
             this.dataGridViewButtonColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "Usuń";
-            this.dataGridViewButtonColumnDelete.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.NullValue = "Usuń";
+            this.dataGridViewButtonColumnDelete.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridViewButtonColumnDelete.FillWeight = 60.9137F;
             this.dataGridViewButtonColumnDelete.HeaderText = "";
             this.dataGridViewButtonColumnDelete.Name = "dataGridViewButtonColumnDelete";
@@ -437,8 +428,8 @@ namespace RezerwacjaSal
             // dataGridViewComboBoxHasLinkTo
             // 
             this.dataGridViewComboBoxHasLinkTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.NullValue = "wybierz budynek";
-            this.dataGridViewComboBoxHasLinkTo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.NullValue = "wybierz budynek";
+            this.dataGridViewComboBoxHasLinkTo.DefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridViewComboBoxHasLinkTo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.dataGridViewComboBoxHasLinkTo.FillWeight = 139.0863F;
             this.dataGridViewComboBoxHasLinkTo.HeaderText = "Ma połączenie z budynkiem";
@@ -467,9 +458,9 @@ namespace RezerwacjaSal
             // ColumnDelete
             // 
             this.ColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = "Usuń";
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.NullValue = "Usuń";
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle29;
             this.ColumnDelete.FillWeight = 60.9137F;
             this.ColumnDelete.HeaderText = "";
             this.ColumnDelete.Name = "ColumnDelete";
@@ -481,8 +472,8 @@ namespace RezerwacjaSal
             // RequiredEquipment
             // 
             this.RequiredEquipment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.NullValue = "wybierz sprzęt";
-            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.NullValue = "wybierz sprzęt";
+            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle30;
             this.RequiredEquipment.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.RequiredEquipment.FillWeight = 139.0863F;
             this.RequiredEquipment.HeaderText = "Wymagany sprzęt";
@@ -583,6 +574,16 @@ namespace RezerwacjaSal
             this.buttonSearch.Text = "Pokaż sale spełniające wymagania";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
+            // checkBoxInfectious
+            // 
+            this.checkBoxInfectious.AutoSize = true;
+            this.checkBoxInfectious.Location = new System.Drawing.Point(14, 127);
+            this.checkBoxInfectious.Name = "checkBoxInfectious";
+            this.checkBoxInfectious.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxInfectious.TabIndex = 19;
+            this.checkBoxInfectious.Text = "Zakaźna";
+            this.checkBoxInfectious.UseVisualStyleBackColor = true;
+            // 
             // ReserveIsolationRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,7 +624,6 @@ namespace RezerwacjaSal
         private System.Windows.Forms.Label labelFrom;
         private System.Windows.Forms.TextBox textBoxFrom;
         private System.Windows.Forms.Label labelReservePatientRoom;
-        private System.Windows.Forms.CheckBox checkBoxInfectious;
         private System.Windows.Forms.Label labelTo;
         private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.Label labelFirstNme;
@@ -653,5 +653,6 @@ namespace RezerwacjaSal
         private System.Windows.Forms.Panel panelReservePatientRoom;
         private System.Windows.Forms.GroupBox groupBoxRequirements;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.CheckBox checkBoxInfectious;
     }
 }
