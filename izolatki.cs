@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RezerwacjaSal
 {
-    public partial class IsolationRooms : Form
+    public partial class izolatki : Form
     {
-        public IsolationRooms()
+        public izolatki()
         {
             InitializeComponent();
         }
