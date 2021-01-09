@@ -30,7 +30,13 @@
         private void InitializeComponent()
         {
             this.dataGridViewFindPatient = new System.Windows.Forms.DataGridView();
+            this.ColumnRoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAvailability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBuilding = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelFilters = new System.Windows.Forms.Panel();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.labelMinAvailablePlaces = new System.Windows.Forms.Label();
             this.numericUpDownAvailablePlaces = new System.Windows.Forms.NumericUpDown();
             this.labelDateTo = new System.Windows.Forms.Label();
@@ -48,11 +54,6 @@
             this.labelSurname = new System.Windows.Forms.Label();
             this.labelFirstName = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
-            this.ColumnRoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAvailability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBuilding = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFindPatient)).BeginInit();
             this.panelFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAvailablePlaces)).BeginInit();
@@ -67,15 +68,49 @@
             this.ColumnDepartment,
             this.ColumnBuilding,
             this.ColumnRoomType});
-            this.dataGridViewFindPatient.Location = new System.Drawing.Point(12, 159);
+            this.dataGridViewFindPatient.Location = new System.Drawing.Point(12, 187);
             this.dataGridViewFindPatient.Name = "dataGridViewFindPatient";
-            this.dataGridViewFindPatient.Size = new System.Drawing.Size(625, 356);
+            this.dataGridViewFindPatient.Size = new System.Drawing.Size(625, 328);
             this.dataGridViewFindPatient.TabIndex = 0;
-            this.dataGridViewFindPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           
+            // 
+            // ColumnRoomNr
+            // 
+            this.ColumnRoomNr.FillWeight = 50F;
+            this.ColumnRoomNr.HeaderText = "Numer sali";
+            this.ColumnRoomNr.MaxInputLength = 9999999;
+            this.ColumnRoomNr.Name = "ColumnRoomNr";
+            this.ColumnRoomNr.Width = 60;
+            // 
+            // ColumnAvailability
+            // 
+            this.ColumnAvailability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnAvailability.HeaderText = "Miejsca (Zajęte/Wszystkie)";
+            this.ColumnAvailability.Name = "ColumnAvailability";
+            this.ColumnAvailability.ReadOnly = true;
+            // 
+            // ColumnDepartment
+            // 
+            this.ColumnDepartment.HeaderText = "Oddział";
+            this.ColumnDepartment.Name = "ColumnDepartment";
+            this.ColumnDepartment.ReadOnly = true;
+            // 
+            // ColumnBuilding
+            // 
+            this.ColumnBuilding.HeaderText = "Budynek";
+            this.ColumnBuilding.Name = "ColumnBuilding";
+            this.ColumnBuilding.ReadOnly = true;
+            // 
+            // ColumnRoomType
+            // 
+            this.ColumnRoomType.HeaderText = "Typ sali";
+            this.ColumnRoomType.Name = "ColumnRoomType";
+            this.ColumnRoomType.ReadOnly = true;
             // 
             // panelFilters
             // 
             this.panelFilters.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panelFilters.Controls.Add(this.buttonSearch);
             this.panelFilters.Controls.Add(this.labelMinAvailablePlaces);
             this.panelFilters.Controls.Add(this.numericUpDownAvailablePlaces);
             this.panelFilters.Controls.Add(this.labelDateTo);
@@ -95,8 +130,18 @@
             this.panelFilters.Controls.Add(this.textBoxFirstName);
             this.panelFilters.Location = new System.Drawing.Point(12, 12);
             this.panelFilters.Name = "panelFilters";
-            this.panelFilters.Size = new System.Drawing.Size(625, 141);
+            this.panelFilters.Size = new System.Drawing.Size(625, 169);
             this.panelFilters.TabIndex = 2;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(7, 132);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(225, 34);
+            this.buttonSearch.TabIndex = 18;
+            this.buttonSearch.Text = "Szukaj";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+         
             // 
             // labelMinAvailablePlaces
             // 
@@ -141,7 +186,7 @@
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(136, 20);
             this.dateTimePickerFrom.TabIndex = 13;
-            this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+         
             // 
             // labelDateFrom
             // 
@@ -160,7 +205,7 @@
             this.labelNumer.Size = new System.Drawing.Size(38, 13);
             this.labelNumer.TabIndex = 11;
             this.labelNumer.Text = "Numer";
-            this.labelNumer.Click += new System.EventHandler(this.label6_Click_1);
+         
             // 
             // textBoxRoomNumber
             // 
@@ -169,7 +214,7 @@
             this.textBoxRoomNumber.Size = new System.Drawing.Size(123, 20);
             this.textBoxRoomNumber.TabIndex = 10;
             this.textBoxRoomNumber.Text = "23832";
-            this.textBoxRoomNumber.TextChanged += new System.EventHandler(this.textBox5_TextChanged_1);
+    
             // 
             // labelFindPatientRoom
             // 
@@ -181,7 +226,7 @@
             this.labelFindPatientRoom.Size = new System.Drawing.Size(175, 20);
             this.labelFindPatientRoom.TabIndex = 1;
             this.labelFindPatientRoom.Text = "Znajdź salę pacjenta";
-            this.labelFindPatientRoom.Click += new System.EventHandler(this.label1_Click_1);
+   
             // 
             // labelPESEL
             // 
@@ -242,7 +287,7 @@
             this.labelFirstName.Size = new System.Drawing.Size(70, 13);
             this.labelFirstName.TabIndex = 3;
             this.labelFirstName.Text = "Pierwsze imię";
-            this.labelFirstName.Click += new System.EventHandler(this.label2_Click);
+     
             // 
             // textBoxFirstName
             // 
@@ -251,40 +296,7 @@
             this.textBoxFirstName.Size = new System.Drawing.Size(123, 20);
             this.textBoxFirstName.TabIndex = 0;
             this.textBoxFirstName.Text = "Jan";
-            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // ColumnRoomNr
-            // 
-            this.ColumnRoomNr.FillWeight = 50F;
-            this.ColumnRoomNr.HeaderText = "Numer sali";
-            this.ColumnRoomNr.MaxInputLength = 9999999;
-            this.ColumnRoomNr.Name = "ColumnRoomNr";
-            this.ColumnRoomNr.Width = 60;
-            // 
-            // ColumnAvailability
-            // 
-            this.ColumnAvailability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnAvailability.HeaderText = "Miejsca (Zajęte/Wszystkie)";
-            this.ColumnAvailability.Name = "ColumnAvailability";
-            this.ColumnAvailability.ReadOnly = true;
-            // 
-            // ColumnDepartment
-            // 
-            this.ColumnDepartment.HeaderText = "Oddział";
-            this.ColumnDepartment.Name = "ColumnDepartment";
-            this.ColumnDepartment.ReadOnly = true;
-            // 
-            // ColumnBuilding
-            // 
-            this.ColumnBuilding.HeaderText = "Budynek";
-            this.ColumnBuilding.Name = "ColumnBuilding";
-            this.ColumnBuilding.ReadOnly = true;
-            // 
-            // ColumnRoomType
-            // 
-            this.ColumnRoomType.HeaderText = "Typ sali";
-            this.ColumnRoomType.Name = "ColumnRoomType";
-            this.ColumnRoomType.ReadOnly = true;
+      
             // 
             // FindPatient
             // 
@@ -295,7 +307,7 @@
             this.Controls.Add(this.dataGridViewFindPatient);
             this.Name = "FindPatient";
             this.Text = "Obłożenie sal";
-            this.Load += new System.EventHandler(this.Form1_Load);
+       
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFindPatient)).EndInit();
             this.panelFilters.ResumeLayout(false);
             this.panelFilters.PerformLayout();
@@ -330,6 +342,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBuilding;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRoomType;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }
 
