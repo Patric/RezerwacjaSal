@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IsolationRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IsolationRooms.Designer.cs">
+      <DependentUpon>IsolationRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testowy.cs">
@@ -54,6 +60,9 @@
     <Compile Include="testowy.Designer.cs">
       <DependentUpon>testowy.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="IsolationRooms.resx">
+      <DependentUpon>IsolationRooms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
