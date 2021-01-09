@@ -46,22 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adding_meetings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adding_meetings.Designer.cs" />
-    <Compile Include="izolatki.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="izolatki.Designer.cs">
-      <DependentUpon>izolatki.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Adding_meetings.resx" />
-    <EmbeddedResource Include="izolatki.resx">
-      <DependentUpon>izolatki.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
