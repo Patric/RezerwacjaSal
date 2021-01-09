@@ -72,7 +72,6 @@
             this.dataGridViewFindPatient.Name = "dataGridViewFindPatient";
             this.dataGridViewFindPatient.Size = new System.Drawing.Size(625, 328);
             this.dataGridViewFindPatient.TabIndex = 0;
-           
             // 
             // ColumnRoomNr
             // 
@@ -141,7 +140,6 @@
             this.buttonSearch.TabIndex = 18;
             this.buttonSearch.Text = "Szukaj";
             this.buttonSearch.UseVisualStyleBackColor = true;
-         
             // 
             // labelMinAvailablePlaces
             // 
@@ -186,7 +184,6 @@
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(136, 20);
             this.dateTimePickerFrom.TabIndex = 13;
-         
             // 
             // labelDateFrom
             // 
@@ -205,7 +202,6 @@
             this.labelNumer.Size = new System.Drawing.Size(38, 13);
             this.labelNumer.TabIndex = 11;
             this.labelNumer.Text = "Numer";
-         
             // 
             // textBoxRoomNumber
             // 
@@ -214,7 +210,6 @@
             this.textBoxRoomNumber.Size = new System.Drawing.Size(123, 20);
             this.textBoxRoomNumber.TabIndex = 10;
             this.textBoxRoomNumber.Text = "23832";
-    
             // 
             // labelFindPatientRoom
             // 
@@ -226,7 +221,6 @@
             this.labelFindPatientRoom.Size = new System.Drawing.Size(175, 20);
             this.labelFindPatientRoom.TabIndex = 1;
             this.labelFindPatientRoom.Text = "Znajdź salę pacjenta";
-   
             // 
             // labelPESEL
             // 
@@ -243,7 +237,7 @@
             this.textBoxPESEL.Name = "textBoxPESEL";
             this.textBoxPESEL.Size = new System.Drawing.Size(123, 20);
             this.textBoxPESEL.TabIndex = 8;
-            this.textBoxPESEL.Text = "76021309332";
+            this.textBoxPESEL.Text = "76021309331";
             // 
             // textBoxSecondName
             // 
@@ -287,7 +281,6 @@
             this.labelFirstName.Size = new System.Drawing.Size(70, 13);
             this.labelFirstName.TabIndex = 3;
             this.labelFirstName.Text = "Pierwsze imię";
-     
             // 
             // textBoxFirstName
             // 
@@ -296,7 +289,6 @@
             this.textBoxFirstName.Size = new System.Drawing.Size(123, 20);
             this.textBoxFirstName.TabIndex = 0;
             this.textBoxFirstName.Text = "Jan";
-      
             // 
             // FindPatient
             // 
@@ -307,7 +299,6 @@
             this.Controls.Add(this.dataGridViewFindPatient);
             this.Name = "FindPatient";
             this.Text = "Obłożenie sal";
-       
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFindPatient)).EndInit();
             this.panelFilters.ResumeLayout(false);
             this.panelFilters.PerformLayout();
