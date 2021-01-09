@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Panel_dodawania_spotkania
+namespace RezerwacjaSal
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Panel_dodawania_spotkania
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Adding_meetings());
+            Application.Run(new testowy());
         }
     }
 }
