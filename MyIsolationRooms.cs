@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace RezerwacjaSal
 {
-    public partial class IsolationRooms : Form
+    public partial class MyIsolationRooms : Form
     {
-        public IsolationRooms()
+        public MyIsolationRooms()
         {
             InitializeComponent();
-        }
-
-        private void labelLoggedAs_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
