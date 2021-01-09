@@ -15,6 +15,7 @@ namespace RezerwacjaSal
         public testowy()
         {
             InitializeComponent();
+            Form findPatient = new FindPatient();
         }
 
         private void button1_Click(object sender, EventArgs e)
