@@ -16,6 +16,7 @@ namespace RezerwacjaSal
         {
             InitializeComponent();
             Form findPatient = new FindPatient();
+            findPatient.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
