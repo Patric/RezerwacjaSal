@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EkranyIPR
+namespace RezerwacjaSal
 {
-    public partial class Form4 : Form
+    public partial class testowy : Form
     {
-        public Form4()
+        public testowy()
         {
             InitializeComponent();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
