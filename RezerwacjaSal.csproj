@@ -52,6 +52,12 @@
     <Compile Include="IsolationRooms.Designer.cs">
       <DependentUpon>IsolationRooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyIsolationRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyIsolationRooms.Designer.cs">
+      <DependentUpon>MyIsolationRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="testowy.cs">
@@ -62,6 +68,9 @@
     </Compile>
     <EmbeddedResource Include="IsolationRooms.resx">
       <DependentUpon>IsolationRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyIsolationRooms.resx">
+      <DependentUpon>MyIsolationRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

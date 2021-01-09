@@ -89,7 +89,7 @@ namespace RezerwacjaSal
             // 
             this.labelLoggedAs.AutoSize = true;
             this.labelLoggedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelLoggedAs.Location = new System.Drawing.Point(542, 14);
+            this.labelLoggedAs.Location = new System.Drawing.Point(455, 14);
             this.labelLoggedAs.Name = "labelLoggedAs";
             this.labelLoggedAs.Size = new System.Drawing.Size(203, 13);
             this.labelLoggedAs.TabIndex = 5;
