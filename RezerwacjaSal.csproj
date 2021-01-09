@@ -46,22 +46,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindPatient.Designer.cs">
+      <DependentUpon>FindPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="IsolationRooms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IsolationRooms.Designer.cs">
       <DependentUpon>IsolationRooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyIsolationRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyIsolationRooms.Designer.cs">
+      <DependentUpon>MyIsolationRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReserveIsolationRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReserveIsolationRoom.Designer.cs">
+      <DependentUpon>ReserveIsolationRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="testowy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="testowy.Designer.cs">
       <DependentUpon>testowy.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FindPatient.resx">
+      <DependentUpon>FindPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IsolationRooms.resx">
       <DependentUpon>IsolationRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyIsolationRooms.resx">
+      <DependentUpon>MyIsolationRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReserveIsolationRoom.resx">
+      <DependentUpon>ReserveIsolationRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

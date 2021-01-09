@@ -1,6 +1,7 @@
-﻿namespace RezerwacjaSal
+﻿
+namespace RezerwacjaSal
 {
-    partial class testowy
+    partial class ReserveIsolationRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +29,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonTESTOWY1 = new System.Windows.Forms.Button();
+            this.button1chuj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonTESTOWY1
+            // button1chuj
             // 
-            this.buttonTESTOWY1.Location = new System.Drawing.Point(251, 136);
-            this.buttonTESTOWY1.Name = "buttonTESTOWY1";
-            this.buttonTESTOWY1.Size = new System.Drawing.Size(200, 72);
-            this.buttonTESTOWY1.TabIndex = 0;
-            this.buttonTESTOWY1.Text = "button1";
-            this.buttonTESTOWY1.UseVisualStyleBackColor = true;
-            this.buttonTESTOWY1.Click += new System.EventHandler(this.button1_Click);
+            this.button1chuj.Location = new System.Drawing.Point(286, 207);
+            this.button1chuj.Name = "button1chuj";
+            this.button1chuj.Size = new System.Drawing.Size(75, 23);
+            this.button1chuj.TabIndex = 0;
+            this.button1chuj.Text = "button1";
+            this.button1chuj.UseVisualStyleBackColor = true;
             // 
-            // testowy
+            // ReserveIsolationRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonTESTOWY1);
-            this.Name = "testowy";
-            this.Text = "testowy";
+            this.Controls.Add(this.button1chuj);
+            this.Name = "ReserveIsolationRoom";
+            this.Text = "ReserveIsolationRoom";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonTESTOWY1;
+        private System.Windows.Forms.Button button1chuj;
     }
 }

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace RezerwacjaSal
 {
-    public partial class testowy : Form
+    public partial class ReserveIsolationRoom : Form
     {
-        public testowy()
+        public ReserveIsolationRoom()
         {
             InitializeComponent();
-            Form findPatient = new FindPatient();
-            findPatient.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
