@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllMeetingReservationsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllMeetingReservationsView.Designer.cs">
+      <DependentUpon>AllMeetingReservationsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorsPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorsPanel.Designer.cs">
+      <DependentUpon>DoctorsPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MeetingRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllMeetingReservationsView.resx">
+      <DependentUpon>AllMeetingReservationsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorsPanel.resx">
+      <DependentUpon>DoctorsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
