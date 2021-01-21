@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_32466460_rezerwacja_salDataSet" targetNamespace="http://tempuri.org/_32466460_rezerwacja_salDataSet.xsd" xmlns:mstns="http://tempuri.org/_32466460_rezerwacja_salDataSet.xsd" xmlns="http://tempuri.org/_32466460_rezerwacja_salDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_32466460_rezerwacja_salConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_32466460_rezerwacja_salConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RezerwacjaSal.Properties.Settings.GlobalReference.Default._32466460_rezerwacja_salConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_32466460_rezerwacja_salDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_32466460_rezerwacja_salDataSet" msprop:Generator_UserDSName="_32466460_rezerwacja_salDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RezerwacjaSal" msprop:Generator_TableClassName="RezerwacjaSalDataTable" msprop:Generator_TableVarName="tableRezerwacjaSal" msprop:Generator_TablePropName="RezerwacjaSal" msprop:Generator_RowDeletingName="RezerwacjaSalRowDeleting" msprop:Generator_RowChangingName="RezerwacjaSalRowChanging" msprop:Generator_RowEvHandlerName="RezerwacjaSalRowChangeEventHandler" msprop:Generator_RowDeletedName="RezerwacjaSalRowDeleted" msprop:Generator_UserTableName="RezerwacjaSal" msprop:Generator_RowChangedName="RezerwacjaSalRowChanged" msprop:Generator_RowEvArgName="RezerwacjaSalRowChangeEvent" msprop:Generator_RowClassName="RezerwacjaSalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="users" msprop:Generator_ColumnVarNameInTable="columnusers" msprop:Generator_ColumnPropNameInRow="users" msprop:Generator_ColumnPropNameInTable="usersColumn" msprop:Generator_UserColumnName="users" type="xs:string" minOccurs="0" />
+              <xs:element name="password" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_UserColumnName="password" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Username">
+      <xs:selector xpath=".//mstns:RezerwacjaSal" />
+      <xs:field xpath="mstns:users" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
