@@ -23,7 +23,6 @@ namespace RezerwacjaSal
             InitializeComponent();
             connectionString = RezerwacjaSal.Properties.Settings.Default._32466460_rezerwacja_salConnectionString;
         }
-
         private void labelTitle_Click(object sender, EventArgs e)
         {
 
@@ -32,55 +31,12 @@ namespace RezerwacjaSal
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 
-            try { 
-             string username = textBoxLogin.Text;
-                string userPassword = textBoxPass.Text;
-                DataTable loginData = new DataTable();
-
-
-                string query = "Select * from users";
-
-
-                using (connection = new MySqlConnection(connectionString))
-                //using (MySqlCommand command = new MySqlCommand(query, connection))
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
-                {
-                    adapter.Fill(loginData);
-
-                }
-
-               
-
-                foreach (DataRow dr in loginData.Rows)
-                {
-                    Console.WriteLine("Login data: " + dr["role"]);
-                    if (dr["username"].ToString() == username && dr["password"].ToString() == userPassword)
-                    {
-                     
-
-
-                        role = dr["role"].ToString();
-
-                        if (role == "0")
-                        {
-                            AllPatientRoomReservations allPatientRoomReservations = new AllPatientRoomReservations();
-                           // this.Close();
-                            allPatientRoomReservations.Show();
-                        }
-
-
-                    }
-
-
-                }
+            Authenticator.login(textBoxLogin.Text.ToString(), textBoxPass.Text.ToString());
+            
         }
-            catch (Exception)
-            {
+        private void Login_Load(object sender, EventArgs e)
+        {
 
-                MessageBox.Show("Wystąpił błąd", "Nieobsłużony wyjątek", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-}
+        }
     }
 }

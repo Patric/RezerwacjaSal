@@ -18,7 +18,16 @@ namespace RezerwacjaSal
             InitializeComponent();
 
         }
-   
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            Navigator.navigateTo(new RoomInformation());
+        }
+
+        private void groupBoxRequirements_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
