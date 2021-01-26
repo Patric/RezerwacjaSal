@@ -107,7 +107,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KlasaTestowa.cs" />
+    <Compile Include="AllMeetingReservationsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllMeetingReservationsView.Designer.cs">
+      <DependentUpon>AllMeetingReservationsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorsPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorsPanel.Designer.cs">
+      <DependentUpon>DoctorsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeetingRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeetingRoom.Designer.cs">
+      <DependentUpon>MeetingRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Views.cs" />
+    <Compile Include="ModelGeneratorTest.Context.cs" />
+    <Compile Include="ModelGeneratorTest.cs" />
+    <Compile Include="ModelTest.Context.cs" />
+    <Compile Include="ModelTest.cs" />
     <Compile Include="PatientRoomReservations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +192,12 @@
       <DependentUpon>testowy.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="_32466460_rezerwacja_salDataSet.cs">
+      <DependentUpon>_32466460_rezerwacja_salDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_32466460_rezerwacja_salDataSet.Designer.cs">
+      <DependentUpon>_32466460_rezerwacja_salDataSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="_32466460_rezerwacja_salDataSet1.cs">
       <DependentUpon>_32466460_rezerwacja_salDataSet1.xsd</DependentUpon>
     </Compile>
@@ -178,6 +206,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_32466460_rezerwacja_salDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_32466460_rezerwacja_salDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_32466460_rezerwacja_salDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AllMeetingReservationsView.resx">
+      <DependentUpon>AllMeetingReservationsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorsPanel.resx">
+      <DependentUpon>DoctorsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientRoomReservations.resx">
       <DependentUpon>PatientRoomReservations.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +250,9 @@
     <EmbeddedResource Include="RoomInformation.resx">
       <DependentUpon>RoomInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="testowy.resx">
+      <DependentUpon>testowy.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,6 +263,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_32466460_rezerwacja_salDataSet.xsc">
+      <DependentUpon>_32466460_rezerwacja_salDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_32466460_rezerwacja_salDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_32466460_rezerwacja_salDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_32466460_rezerwacja_salDataSet.xss">
+      <DependentUpon>_32466460_rezerwacja_salDataSet.xsd</DependentUpon>
+    </None>
     <None Include="_32466460_rezerwacja_salDataSet1.xsc">
       <DependentUpon>_32466460_rezerwacja_salDataSet1.xsd</DependentUpon>
     </None>

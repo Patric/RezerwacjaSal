@@ -12,7 +12,8 @@
 _32466460_rezerwacja_salDataSet1.xsd
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
+_32466460_rezerwacja_salDataSet.xsd
+_32466460_rezerwacja_salDataSet1.xsd
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
