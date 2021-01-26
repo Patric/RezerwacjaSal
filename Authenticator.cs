@@ -14,13 +14,8 @@ namespace RezerwacjaSal
             private set;
         }
 
-
-
         public static int login(string login, string haslo)
         {
-
-
-  
             try
             {
                 currentUser = DbAdapter.getUser(login, haslo);

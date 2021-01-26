@@ -16,7 +16,7 @@ namespace RezerwacjaSal
     {
         public static string role;
         String connectionString;
-        MySqlConnection connection;
+
 
         public Login()
         {   

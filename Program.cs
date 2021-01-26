@@ -17,8 +17,7 @@ namespace RezerwacjaSal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
-            Form login = new Login();
-            login.Show();
+     
         }
     }
 }

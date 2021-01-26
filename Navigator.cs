@@ -22,6 +22,7 @@ namespace RezerwacjaSal
 
             switch (Int32.Parse(Authenticator.currentUser.role))
             {
+                //ordyantor
                 case 0:
                     {
                         currentRoot = new ReservePatientRoom();
