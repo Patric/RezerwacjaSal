@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KlasaTestowa.cs" />
     <Compile Include="PatientRoomReservations.cs">
       <SubType>Form</SubType>
     </Compile>
