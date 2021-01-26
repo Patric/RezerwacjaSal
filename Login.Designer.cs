@@ -75,7 +75,7 @@ namespace RezerwacjaSal
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(100, 20);
             this.textBoxLogin.TabIndex = 3;
-            this.textBoxLogin.Text = "ordynator1";
+            this.textBoxLogin.Text = "lekarz1";
             // 
             // textBoxPass
             // 
@@ -83,7 +83,7 @@ namespace RezerwacjaSal
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(100, 20);
             this.textBoxPass.TabIndex = 4;
-            this.textBoxPass.Text = "ordynator1";
+            this.textBoxPass.Text = "lekarz1";
             // 
             // buttonLogin
             // 
