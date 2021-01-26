@@ -25,10 +25,17 @@ namespace RezerwacjaSal
                 //ordyantor
                 case 0:
                     {
+                        // Panel Ordynatora 
                         currentRoot = new ReservePatientRoom();
-                       
+                        break;
                     }
-                    break;
+                case 1:
+                    {
+                        // Panel Lekarza
+                        currentRoot = new ReservePatientRoom();
+                        break;
+                    }
+                  
             }
 
             foreach (Form form in Application.OpenForms)

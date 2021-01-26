@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelReservePatientRoom = new System.Windows.Forms.Panel();
             this.groupBoxReservationData = new System.Windows.Forms.GroupBox();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -69,7 +69,6 @@
             this.dataGridViewComboBoxHasLinkTo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewButtonColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dateTimePickerCheckInDate = new System.Windows.Forms.DateTimePicker();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.dateTimePickerCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.labelBuilding = new System.Windows.Forms.Label();
             this.labelCheckOutDate = new System.Windows.Forms.Label();
@@ -274,9 +273,9 @@
             this.labelPESEL.AutoSize = true;
             this.labelPESEL.Location = new System.Drawing.Point(16, 131);
             this.labelPESEL.Name = "labelPESEL";
-            this.labelPESEL.Size = new System.Drawing.Size(41, 13);
+            this.labelPESEL.Size = new System.Drawing.Size(82, 13);
             this.labelPESEL.TabIndex = 28;
-            this.labelPESEL.Text = "PESEL";
+            this.labelPESEL.Text = "Numer pacjenta";
             // 
             // textBoxSurname
             // 
@@ -317,7 +316,6 @@
             this.groupBoxRequirements.Controls.Add(this.dataGridViewRequiredEquipment);
             this.groupBoxRequirements.Controls.Add(this.dataGridViewHasLinkTo);
             this.groupBoxRequirements.Controls.Add(this.dateTimePickerCheckInDate);
-            this.groupBoxRequirements.Controls.Add(this.buttonSearch);
             this.groupBoxRequirements.Controls.Add(this.dateTimePickerCheckOutDate);
             this.groupBoxRequirements.Controls.Add(this.labelBuilding);
             this.groupBoxRequirements.Controls.Add(this.labelCheckOutDate);
@@ -355,8 +353,8 @@
             // RequiredEquipment
             // 
             this.RequiredEquipment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle11.NullValue = "wybierz sprzęt";
-            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.NullValue = "wybierz sprzęt";
+            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle1;
             this.RequiredEquipment.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.RequiredEquipment.FillWeight = 139.0863F;
             this.RequiredEquipment.HeaderText = "Wymagany sprzęt";
@@ -371,9 +369,9 @@
             // ColumnDelete
             // 
             this.ColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.NullValue = "Usuń";
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "Usuń";
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnDelete.FillWeight = 60.9137F;
             this.ColumnDelete.HeaderText = "";
             this.ColumnDelete.Name = "ColumnDelete";
@@ -397,8 +395,8 @@
             // dataGridViewComboBoxHasLinkTo
             // 
             this.dataGridViewComboBoxHasLinkTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.NullValue = "wybierz budynek";
-            this.dataGridViewComboBoxHasLinkTo.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.NullValue = "wybierz budynek";
+            this.dataGridViewComboBoxHasLinkTo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewComboBoxHasLinkTo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.dataGridViewComboBoxHasLinkTo.FillWeight = 139.0863F;
             this.dataGridViewComboBoxHasLinkTo.HeaderText = "Ma połączenie z budynkiem";
@@ -415,9 +413,9 @@
             // dataGridViewButtonColumnDelete
             // 
             this.dataGridViewButtonColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.NullValue = "Usuń";
-            this.dataGridViewButtonColumnDelete.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "Usuń";
+            this.dataGridViewButtonColumnDelete.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewButtonColumnDelete.FillWeight = 60.9137F;
             this.dataGridViewButtonColumnDelete.HeaderText = "";
             this.dataGridViewButtonColumnDelete.Name = "dataGridViewButtonColumnDelete";
@@ -432,16 +430,6 @@
             this.dateTimePickerCheckInDate.Name = "dateTimePickerCheckInDate";
             this.dateTimePickerCheckInDate.Size = new System.Drawing.Size(136, 20);
             this.dateTimePickerCheckInDate.TabIndex = 13;
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(13, 213);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(285, 36);
-            this.buttonSearch.TabIndex = 22;
-            this.buttonSearch.Text = "Pokaż sale spełniające wymagania";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // dateTimePickerCheckOutDate
             // 
@@ -522,8 +510,8 @@
             // ColumnRoomNr
             // 
             this.ColumnRoomNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle15.NullValue = "751";
-            this.ColumnRoomNr.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.NullValue = "751";
+            this.ColumnRoomNr.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnRoomNr.FillWeight = 50F;
             this.ColumnRoomNr.HeaderText = "Numer sali";
             this.ColumnRoomNr.MaxInputLength = 9999999;
@@ -532,8 +520,8 @@
             // 
             // ColumnAvailablePlaces
             // 
-            dataGridViewCellStyle16.NullValue = "Tak";
-            this.ColumnAvailablePlaces.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.NullValue = "Tak";
+            this.ColumnAvailablePlaces.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnAvailablePlaces.HeaderText = "Wolne miejsca";
             this.ColumnAvailablePlaces.Name = "ColumnAvailablePlaces";
             this.ColumnAvailablePlaces.ReadOnly = true;
@@ -541,8 +529,8 @@
             // ColumnDepartment
             // 
             this.ColumnDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle17.NullValue = "Onkologia";
-            this.ColumnDepartment.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.NullValue = "Onkologia";
+            this.ColumnDepartment.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnDepartment.HeaderText = "Oddział";
             this.ColumnDepartment.Name = "ColumnDepartment";
             this.ColumnDepartment.ReadOnly = true;
@@ -551,8 +539,8 @@
             // ColumnBuilding
             // 
             this.ColumnBuilding.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle18.NullValue = "C";
-            this.ColumnBuilding.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.NullValue = "C";
+            this.ColumnBuilding.DefaultCellStyle = dataGridViewCellStyle8;
             this.ColumnBuilding.HeaderText = "Budynek";
             this.ColumnBuilding.Name = "ColumnBuilding";
             this.ColumnBuilding.ReadOnly = true;
@@ -560,8 +548,8 @@
             // ColumnHasLinkTo
             // 
             this.ColumnHasLinkTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle19.NullValue = "A, D, E";
-            this.ColumnHasLinkTo.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.NullValue = "A, D, E";
+            this.ColumnHasLinkTo.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnHasLinkTo.HeaderText = "Ma połączenie z";
             this.ColumnHasLinkTo.Name = "ColumnHasLinkTo";
             this.ColumnHasLinkTo.ReadOnly = true;
@@ -575,9 +563,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.NullValue = "Wybierz";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = "Wybierz";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column5.HeaderText = "";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -642,7 +630,6 @@
         private System.Windows.Forms.TextBox textBoxSecondName;
         private System.Windows.Forms.GroupBox groupBoxRequirements;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRoomNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAvailablePlaces;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDepartment;

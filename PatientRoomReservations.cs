@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace RezerwacjaSal
 {
-    public partial class AllPatientRoomReservations : Form
+    public partial class PatientRoomReservations : Form
     {
-        public AllPatientRoomReservations()
+        public PatientRoomReservations()
         {
             InitializeComponent();
-          
+            
         }
 
         private void dataGridViewAllPatientRoomReservations_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,6 +62,11 @@ namespace RezerwacjaSal
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PatientRoomReservations_Load(object sender, EventArgs e)
         {
 
         }

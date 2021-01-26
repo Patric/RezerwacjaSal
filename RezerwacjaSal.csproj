@@ -72,11 +72,11 @@
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllPatientRoomReservations.cs">
+    <Compile Include="PatientRoomReservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AllPatientRoomReservations.Designer.cs">
-      <DependentUpon>AllPatientRoomReservations.cs</DependentUpon>
+    <Compile Include="PatientRoomReservations.Designer.cs">
+      <DependentUpon>PatientRoomReservations.cs</DependentUpon>
     </Compile>
     <Compile Include="Authenticator.cs" />
     <Compile Include="DbAdapter.cs" />
@@ -141,8 +141,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_32466460_rezerwacja_salDataSet1.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AllPatientRoomReservations.resx">
-      <DependentUpon>AllPatientRoomReservations.cs</DependentUpon>
+    <EmbeddedResource Include="PatientRoomReservations.resx">
+      <DependentUpon>PatientRoomReservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindPatient.resx">
       <DependentUpon>FindPatient.cs</DependentUpon>
