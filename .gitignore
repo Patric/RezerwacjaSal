@@ -318,6 +318,10 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+#db
+_32466460_rezerwacja_salDataSet1.xsd
+
+
 # OpenCover UI analysis results
 OpenCover/
 

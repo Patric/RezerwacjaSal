@@ -89,15 +89,21 @@ namespace RezerwacjaSal
 
                 List<Reservation> reservationList = new List<Reservation>();
 
-                //foreach(DataRow dr in )
-                // return 1;
-                //return new User(loginData.Rows[0]["id"].ToString(),
-                //   loginData.Rows[0]["username"].ToString(),
-                //   loginData.Rows[0]["external_id"].ToString(),
-                //   loginData.Rows[0]["role"].ToString(),
-                //   loginData.Rows[0]["name"].ToString(),
-                //   loginData.Rows[0]["surname"].ToString());
-                return reservationList;
+                foreach (DataRow dr in queryData.Rows)
+                {
+                   // reservationList.Append(new Reservation(dr["reservation_id"]))
+
+
+                }
+
+                    // return 1;
+                    //return new User(loginData.Rows[0]["id"].ToString(),
+                    //   loginData.Rows[0]["username"].ToString(),
+                    //   loginData.Rows[0]["external_id"].ToString(),
+                    //   loginData.Rows[0]["role"].ToString(),
+                    //   loginData.Rows[0]["name"].ToString(),
+                    //   loginData.Rows[0]["surname"].ToString());
+                    return reservationList;
 
             }
             catch (Exception error)
