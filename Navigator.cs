@@ -32,7 +32,7 @@ namespace RezerwacjaSal
                 case 1:
                     {
                         // Panel Lekarza
-                        currentRoot = new ReservePatientRoom();
+                        currentRoot = new PatientRoomReservations();
                         break;
                     }
                   

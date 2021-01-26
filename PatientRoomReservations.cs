@@ -68,7 +68,7 @@ namespace RezerwacjaSal
 
         private void PatientRoomReservations_Load(object sender, EventArgs e)
         {
-
+            DbAdapter.getReservations();
         }
     }
 }
