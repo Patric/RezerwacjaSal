@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,14 +11,30 @@ using System.Windows.Forms;
 
 namespace RezerwacjaSal
 {
+  
     public partial class Login : Form
     {
+        public static string role;
+        String connectionString;
+
+
         public Login()
-        {
+        {   
             InitializeComponent();
+            connectionString = RezerwacjaSal.Properties.Settings.Default._32466460_rezerwacja_salConnectionString;
+        }
+        private void labelTitle_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private void labelTitle_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+
+            Authenticator.login(textBoxLogin.Text.ToString(), textBoxPass.Text.ToString());
+            
+        }
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
