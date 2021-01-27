@@ -20,42 +20,70 @@ namespace RezerwacjaSal
         public static void navigateRoot()
         {
 
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {   
+
+                if (Application.OpenForms[i].Name.ToString().Equals("Login"))
+                {
+                    Application.OpenForms[i].Hide();
+
+                }
+                else
+                {
+                    Application.OpenForms[i].Close();
+                }
+            }
+
+
+
             switch (Int32.Parse(Authenticator.currentUser.role))
             {
                 //ordyantor
                 case 0:
                     {
-                        // Panel Ordynatora 
+                        // Powinien otwieraæ panel ordynatora, którego nie robimy
                         currentRoot = new ReservePatientRoom();
                         break;
                     }
                 case 1:
                     {
-                        // Panel Lekarza
+                        // Powinien otwieraæ panel lekarza, który robimy
                         currentRoot = new PatientRoomReservations();
                         break;
                     }
                   
             }
 
-            foreach (Form form in Application.OpenForms)
-            {
-                form.Hide();
-            }
             currentRoot.Show();
 
-            for (int i = Application.OpenForms.Count; i >= 0; i--)
+        }
+        // Closes all forms without main form and opens new one
+        public static void navigateTo(Form form)
+        {
+            // Close all forms
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                if (!Application.OpenForms[i].IsAccessible)
+
+                if (Application.OpenForms[i].Name.ToString().Equals("Login"))
+                {
+                    Application.OpenForms[i].Hide();
+
+                }
+                else
                 {
                     Application.OpenForms[i].Close();
                 }
             }
+            // Show current form
+            form.Show();
 
         }
-        public static void navigateTo(Form form)
+
+        // Hides parent and opens child
+        public static void navigateToChild(Form child, Form parent)
         {
-            currentRoot.Hide();
+           
+            parent.Hide();
 
             // Close all forms
             foreach (Form form_ in Application.OpenForms)
@@ -69,9 +97,32 @@ namespace RezerwacjaSal
             }
 
             // Show current form
-            form.Show();
+            child.Show();
 
         }
+
+        // Closes child and unhides parent
+        public static void navigateBack(Form child)
+        {
+            for (int i = Application.OpenForms.Count - 2; i >= 0; i--)
+            {
+
+                if (Application.OpenForms[i].IsAccessible == false)
+                {
+                    child.Hide();
+                    Application.OpenForms[i].Show();
+                    break;
+                }
+            }
+
+         
+            child.Close();
+
+        }
+
+
+
+
 
 
 

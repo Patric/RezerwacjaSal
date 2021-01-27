@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelReservePatientRoom = new System.Windows.Forms.Panel();
             this.groupBoxReservationData = new System.Windows.Forms.GroupBox();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -61,50 +53,42 @@
             this.labelSecondName = new System.Windows.Forms.Label();
             this.textBoxSecondName = new System.Windows.Forms.TextBox();
             this.groupBoxRequirements = new System.Windows.Forms.GroupBox();
+            this.button_back = new System.Windows.Forms.Button();
             this.labelCheckInDate = new System.Windows.Forms.Label();
             this.dataGridViewRequiredEquipment = new System.Windows.Forms.DataGridView();
             this.RequiredEquipment = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewHasLinkTo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewComboBoxHasLinkTo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewButtonColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dateTimePickerCheckInDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.labelBuilding = new System.Windows.Forms.Label();
             this.labelCheckOutDate = new System.Windows.Forms.Label();
             this.comboBoxBulding = new System.Windows.Forms.ComboBox();
-            this.checkBoxInfectious = new System.Windows.Forms.CheckBox();
             this.labelReservePatientRoom = new System.Windows.Forms.Label();
             this.dataGridViewPatientRooms = new System.Windows.Forms.DataGridView();
-            this.ColumnRoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAvailablePlaces = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBuilding = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnHasLinkTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnInfectious = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.buttonSelect = new System.Windows.Forms.Button();
+            this.panelReservationData = new System.Windows.Forms.Panel();
+            this.comboBoxInfectious = new System.Windows.Forms.ComboBox();
+            this.labelInfectious = new System.Windows.Forms.Label();
             this.panelReservePatientRoom.SuspendLayout();
             this.groupBoxReservationData.SuspendLayout();
             this.groupBoxRequirements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequiredEquipment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHasLinkTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientRooms)).BeginInit();
+            this.panelReservationData.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelReservePatientRoom
             // 
             this.panelReservePatientRoom.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panelReservePatientRoom.Controls.Add(this.groupBoxReservationData);
             this.panelReservePatientRoom.Controls.Add(this.groupBoxRequirements);
             this.panelReservePatientRoom.Controls.Add(this.labelReservePatientRoom);
-            this.panelReservePatientRoom.Location = new System.Drawing.Point(12, 13);
+            this.panelReservePatientRoom.Location = new System.Drawing.Point(302, 28);
             this.panelReservePatientRoom.Name = "panelReservePatientRoom";
-            this.panelReservePatientRoom.Size = new System.Drawing.Size(1245, 392);
+            this.panelReservePatientRoom.Size = new System.Drawing.Size(713, 266);
             this.panelReservePatientRoom.TabIndex = 4;
             // 
             // groupBoxReservationData
             // 
-            this.groupBoxReservationData.Controls.Add(this.buttonSave);
             this.groupBoxReservationData.Controls.Add(this.textBoxRoom);
             this.groupBoxReservationData.Controls.Add(this.labelRoom);
             this.groupBoxReservationData.Controls.Add(this.textBoxReservationNr);
@@ -124,25 +108,25 @@
             this.groupBoxReservationData.Controls.Add(this.textBoxPESEL);
             this.groupBoxReservationData.Controls.Add(this.labelSecondName);
             this.groupBoxReservationData.Controls.Add(this.textBoxSecondName);
-            this.groupBoxReservationData.Location = new System.Drawing.Point(979, 33);
+            this.groupBoxReservationData.Location = new System.Drawing.Point(13, 20);
             this.groupBoxReservationData.Name = "groupBoxReservationData";
-            this.groupBoxReservationData.Size = new System.Drawing.Size(252, 342);
+            this.groupBoxReservationData.Size = new System.Drawing.Size(252, 448);
             this.groupBoxReservationData.TabIndex = 25;
             this.groupBoxReservationData.TabStop = false;
             this.groupBoxReservationData.Text = "Dane rezerwacji";
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(19, 300);
+            this.buttonSave.Location = new System.Drawing.Point(13, 493);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(212, 27);
+            this.buttonSave.Size = new System.Drawing.Size(252, 47);
             this.buttonSave.TabIndex = 40;
             this.buttonSave.Text = "Zapisz";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // textBoxRoom
             // 
-            this.textBoxRoom.Location = new System.Drawing.Point(108, 252);
+            this.textBoxRoom.Location = new System.Drawing.Point(108, 333);
             this.textBoxRoom.Name = "textBoxRoom";
             this.textBoxRoom.ReadOnly = true;
             this.textBoxRoom.Size = new System.Drawing.Size(123, 20);
@@ -152,7 +136,7 @@
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
-            this.labelRoom.Location = new System.Drawing.Point(16, 256);
+            this.labelRoom.Location = new System.Drawing.Point(16, 337);
             this.labelRoom.Name = "labelRoom";
             this.labelRoom.Size = new System.Drawing.Size(28, 13);
             this.labelRoom.TabIndex = 38;
@@ -160,7 +144,7 @@
             // 
             // textBoxReservationNr
             // 
-            this.textBoxReservationNr.Location = new System.Drawing.Point(108, 26);
+            this.textBoxReservationNr.Location = new System.Drawing.Point(108, 61);
             this.textBoxReservationNr.Name = "textBoxReservationNr";
             this.textBoxReservationNr.ReadOnly = true;
             this.textBoxReservationNr.Size = new System.Drawing.Size(123, 20);
@@ -169,7 +153,7 @@
             // labelReservationNumber
             // 
             this.labelReservationNumber.AutoSize = true;
-            this.labelReservationNumber.Location = new System.Drawing.Point(16, 29);
+            this.labelReservationNumber.Location = new System.Drawing.Point(16, 64);
             this.labelReservationNumber.Name = "labelReservationNumber";
             this.labelReservationNumber.Size = new System.Drawing.Size(88, 13);
             this.labelReservationNumber.TabIndex = 36;
@@ -178,7 +162,7 @@
             // labelFrom
             // 
             this.labelFrom.AutoSize = true;
-            this.labelFrom.Location = new System.Drawing.Point(16, 203);
+            this.labelFrom.Location = new System.Drawing.Point(16, 284);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(21, 13);
             this.labelFrom.TabIndex = 33;
@@ -186,7 +170,7 @@
             // 
             // textBoxFrom
             // 
-            this.textBoxFrom.Location = new System.Drawing.Point(108, 200);
+            this.textBoxFrom.Location = new System.Drawing.Point(108, 281);
             this.textBoxFrom.Name = "textBoxFrom";
             this.textBoxFrom.ReadOnly = true;
             this.textBoxFrom.Size = new System.Drawing.Size(123, 20);
@@ -196,7 +180,7 @@
             // labelTo
             // 
             this.labelTo.AutoSize = true;
-            this.labelTo.Location = new System.Drawing.Point(16, 226);
+            this.labelTo.Location = new System.Drawing.Point(16, 307);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(21, 13);
             this.labelTo.TabIndex = 34;
@@ -204,7 +188,7 @@
             // 
             // textBoxTo
             // 
-            this.textBoxTo.Location = new System.Drawing.Point(108, 226);
+            this.textBoxTo.Location = new System.Drawing.Point(108, 307);
             this.textBoxTo.Name = "textBoxTo";
             this.textBoxTo.ReadOnly = true;
             this.textBoxTo.Size = new System.Drawing.Size(123, 20);
@@ -214,7 +198,7 @@
             // labelSicknessName
             // 
             this.labelSicknessName.AutoSize = true;
-            this.labelSicknessName.Location = new System.Drawing.Point(105, 179);
+            this.labelSicknessName.Location = new System.Drawing.Point(105, 214);
             this.labelSicknessName.Name = "labelSicknessName";
             this.labelSicknessName.Size = new System.Drawing.Size(85, 13);
             this.labelSicknessName.TabIndex = 31;
@@ -223,7 +207,7 @@
             // labelFirstNme
             // 
             this.labelFirstNme.AutoSize = true;
-            this.labelFirstNme.Location = new System.Drawing.Point(16, 52);
+            this.labelFirstNme.Location = new System.Drawing.Point(16, 87);
             this.labelFirstNme.Name = "labelFirstNme";
             this.labelFirstNme.Size = new System.Drawing.Size(70, 13);
             this.labelFirstNme.TabIndex = 22;
@@ -236,7 +220,7 @@
             "BN-01L",
             "BN-02L",
             "BN-01P"});
-            this.comboBoxSicknessNr.Location = new System.Drawing.Point(108, 155);
+            this.comboBoxSicknessNr.Location = new System.Drawing.Point(108, 190);
             this.comboBoxSicknessNr.Name = "comboBoxSicknessNr";
             this.comboBoxSicknessNr.Size = new System.Drawing.Size(123, 21);
             this.comboBoxSicknessNr.TabIndex = 30;
@@ -244,7 +228,7 @@
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(108, 49);
+            this.textBoxFirstName.Location = new System.Drawing.Point(108, 84);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(123, 20);
             this.textBoxFirstName.TabIndex = 21;
@@ -253,7 +237,7 @@
             // labelSicknessSymbol
             // 
             this.labelSicknessSymbol.AutoSize = true;
-            this.labelSicknessSymbol.Location = new System.Drawing.Point(16, 158);
+            this.labelSicknessSymbol.Location = new System.Drawing.Point(16, 193);
             this.labelSicknessSymbol.Name = "labelSicknessSymbol";
             this.labelSicknessSymbol.Size = new System.Drawing.Size(82, 13);
             this.labelSicknessSymbol.TabIndex = 29;
@@ -262,7 +246,7 @@
             // labelSurname
             // 
             this.labelSurname.AutoSize = true;
-            this.labelSurname.Location = new System.Drawing.Point(16, 102);
+            this.labelSurname.Location = new System.Drawing.Point(16, 137);
             this.labelSurname.Name = "labelSurname";
             this.labelSurname.Size = new System.Drawing.Size(53, 13);
             this.labelSurname.TabIndex = 23;
@@ -271,7 +255,7 @@
             // labelPESEL
             // 
             this.labelPESEL.AutoSize = true;
-            this.labelPESEL.Location = new System.Drawing.Point(16, 131);
+            this.labelPESEL.Location = new System.Drawing.Point(16, 166);
             this.labelPESEL.Name = "labelPESEL";
             this.labelPESEL.Size = new System.Drawing.Size(82, 13);
             this.labelPESEL.TabIndex = 28;
@@ -279,7 +263,7 @@
             // 
             // textBoxSurname
             // 
-            this.textBoxSurname.Location = new System.Drawing.Point(108, 102);
+            this.textBoxSurname.Location = new System.Drawing.Point(108, 137);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(123, 20);
             this.textBoxSurname.TabIndex = 24;
@@ -287,7 +271,7 @@
             // 
             // textBoxPESEL
             // 
-            this.textBoxPESEL.Location = new System.Drawing.Point(108, 128);
+            this.textBoxPESEL.Location = new System.Drawing.Point(108, 163);
             this.textBoxPESEL.Name = "textBoxPESEL";
             this.textBoxPESEL.Size = new System.Drawing.Size(123, 20);
             this.textBoxPESEL.TabIndex = 27;
@@ -296,7 +280,7 @@
             // labelSecondName
             // 
             this.labelSecondName.AutoSize = true;
-            this.labelSecondName.Location = new System.Drawing.Point(16, 75);
+            this.labelSecondName.Location = new System.Drawing.Point(16, 110);
             this.labelSecondName.Name = "labelSecondName";
             this.labelSecondName.Size = new System.Drawing.Size(59, 13);
             this.labelSecondName.TabIndex = 25;
@@ -304,7 +288,7 @@
             // 
             // textBoxSecondName
             // 
-            this.textBoxSecondName.Location = new System.Drawing.Point(108, 75);
+            this.textBoxSecondName.Location = new System.Drawing.Point(108, 110);
             this.textBoxSecondName.Name = "textBoxSecondName";
             this.textBoxSecondName.Size = new System.Drawing.Size(123, 20);
             this.textBoxSecondName.TabIndex = 26;
@@ -312,22 +296,33 @@
             // 
             // groupBoxRequirements
             // 
+            this.groupBoxRequirements.Controls.Add(this.labelInfectious);
+            this.groupBoxRequirements.Controls.Add(this.comboBoxInfectious);
+            this.groupBoxRequirements.Controls.Add(this.buttonSelect);
             this.groupBoxRequirements.Controls.Add(this.labelCheckInDate);
             this.groupBoxRequirements.Controls.Add(this.dataGridViewRequiredEquipment);
-            this.groupBoxRequirements.Controls.Add(this.dataGridViewHasLinkTo);
             this.groupBoxRequirements.Controls.Add(this.dateTimePickerCheckInDate);
             this.groupBoxRequirements.Controls.Add(this.dateTimePickerCheckOutDate);
             this.groupBoxRequirements.Controls.Add(this.labelBuilding);
             this.groupBoxRequirements.Controls.Add(this.labelCheckOutDate);
             this.groupBoxRequirements.Controls.Add(this.comboBoxBulding);
-            this.groupBoxRequirements.Controls.Add(this.checkBoxInfectious);
             this.groupBoxRequirements.Location = new System.Drawing.Point(7, 33);
             this.groupBoxRequirements.Name = "groupBoxRequirements";
-            this.groupBoxRequirements.Size = new System.Drawing.Size(950, 342);
+            this.groupBoxRequirements.Size = new System.Drawing.Size(681, 207);
             this.groupBoxRequirements.TabIndex = 24;
             this.groupBoxRequirements.TabStop = false;
             this.groupBoxRequirements.Text = "Wymagania";
             this.groupBoxRequirements.Enter += new System.EventHandler(this.groupBoxRequirements_Enter);
+            // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(13, 564);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(252, 44);
+            this.button_back.TabIndex = 41;
+            this.button_back.Text = "Wstecz";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // labelCheckInDate
             // 
@@ -344,17 +339,17 @@
             this.dataGridViewRequiredEquipment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RequiredEquipment,
             this.ColumnDelete});
-            this.dataGridViewRequiredEquipment.Location = new System.Drawing.Point(631, 29);
+            this.dataGridViewRequiredEquipment.Location = new System.Drawing.Point(332, 29);
             this.dataGridViewRequiredEquipment.Name = "dataGridViewRequiredEquipment";
-            this.dataGridViewRequiredEquipment.Size = new System.Drawing.Size(296, 220);
+            this.dataGridViewRequiredEquipment.Size = new System.Drawing.Size(296, 158);
             this.dataGridViewRequiredEquipment.TabIndex = 18;
             this.dataGridViewRequiredEquipment.VirtualMode = true;
             // 
             // RequiredEquipment
             // 
             this.RequiredEquipment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.NullValue = "wybierz sprzęt";
-            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.NullValue = "wybierz sprzęt";
+            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle3;
             this.RequiredEquipment.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.RequiredEquipment.FillWeight = 139.0863F;
             this.RequiredEquipment.HeaderText = "Wymagany sprzęt";
@@ -369,9 +364,9 @@
             // ColumnDelete
             // 
             this.ColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "Usuń";
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "Usuń";
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnDelete.FillWeight = 60.9137F;
             this.ColumnDelete.HeaderText = "";
             this.ColumnDelete.Name = "ColumnDelete";
@@ -379,50 +374,6 @@
             this.ColumnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnDelete.Text = "Usun";
             this.ColumnDelete.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewHasLinkTo
-            // 
-            this.dataGridViewHasLinkTo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHasLinkTo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewComboBoxHasLinkTo,
-            this.dataGridViewButtonColumnDelete});
-            this.dataGridViewHasLinkTo.Location = new System.Drawing.Point(310, 29);
-            this.dataGridViewHasLinkTo.Name = "dataGridViewHasLinkTo";
-            this.dataGridViewHasLinkTo.Size = new System.Drawing.Size(305, 220);
-            this.dataGridViewHasLinkTo.TabIndex = 23;
-            this.dataGridViewHasLinkTo.VirtualMode = true;
-            // 
-            // dataGridViewComboBoxHasLinkTo
-            // 
-            this.dataGridViewComboBoxHasLinkTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.NullValue = "wybierz budynek";
-            this.dataGridViewComboBoxHasLinkTo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewComboBoxHasLinkTo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.dataGridViewComboBoxHasLinkTo.FillWeight = 139.0863F;
-            this.dataGridViewComboBoxHasLinkTo.HeaderText = "Ma połączenie z budynkiem";
-            this.dataGridViewComboBoxHasLinkTo.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E"});
-            this.dataGridViewComboBoxHasLinkTo.Name = "dataGridViewComboBoxHasLinkTo";
-            this.dataGridViewComboBoxHasLinkTo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxHasLinkTo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewButtonColumnDelete
-            // 
-            this.dataGridViewButtonColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "Usuń";
-            this.dataGridViewButtonColumnDelete.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewButtonColumnDelete.FillWeight = 60.9137F;
-            this.dataGridViewButtonColumnDelete.HeaderText = "";
-            this.dataGridViewButtonColumnDelete.Name = "dataGridViewButtonColumnDelete";
-            this.dataGridViewButtonColumnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewButtonColumnDelete.Text = "Usun";
-            this.dataGridViewButtonColumnDelete.UseColumnTextForButtonValue = true;
             // 
             // dateTimePickerCheckInDate
             // 
@@ -464,21 +415,14 @@
             "B",
             "C",
             "D",
-            "E"});
+            "E",
+            "Wszystkie"});
             this.comboBoxBulding.Location = new System.Drawing.Point(14, 89);
             this.comboBoxBulding.Name = "comboBoxBulding";
             this.comboBoxBulding.Size = new System.Drawing.Size(135, 21);
             this.comboBoxBulding.TabIndex = 20;
-            // 
-            // checkBoxInfectious
-            // 
-            this.checkBoxInfectious.AutoSize = true;
-            this.checkBoxInfectious.Location = new System.Drawing.Point(14, 127);
-            this.checkBoxInfectious.Name = "checkBoxInfectious";
-            this.checkBoxInfectious.Size = new System.Drawing.Size(68, 17);
-            this.checkBoxInfectious.TabIndex = 19;
-            this.checkBoxInfectious.Text = "Zakaźna";
-            this.checkBoxInfectious.UseVisualStyleBackColor = true;
+            this.comboBoxBulding.Text = "Wszystkie";
+            this.comboBoxBulding.SelectedIndexChanged += new System.EventHandler(this.comboBoxBulding_SelectedIndexChanged);
             // 
             // labelReservePatientRoom
             // 
@@ -494,93 +438,66 @@
             // dataGridViewPatientRooms
             // 
             this.dataGridViewPatientRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPatientRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnRoomNr,
-            this.ColumnAvailablePlaces,
-            this.ColumnDepartment,
-            this.ColumnBuilding,
-            this.ColumnHasLinkTo,
-            this.ColumnInfectious,
-            this.Column5});
-            this.dataGridViewPatientRooms.Location = new System.Drawing.Point(12, 411);
+            this.dataGridViewPatientRooms.Location = new System.Drawing.Point(299, 304);
             this.dataGridViewPatientRooms.Name = "dataGridViewPatientRooms";
-            this.dataGridViewPatientRooms.Size = new System.Drawing.Size(1245, 208);
+            this.dataGridViewPatientRooms.Size = new System.Drawing.Size(713, 387);
             this.dataGridViewPatientRooms.TabIndex = 3;
+            this.dataGridViewPatientRooms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatientRooms_CellContentClick);
             // 
-            // ColumnRoomNr
+            // buttonSelect
             // 
-            this.ColumnRoomNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.NullValue = "751";
-            this.ColumnRoomNr.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnRoomNr.FillWeight = 50F;
-            this.ColumnRoomNr.HeaderText = "Numer sali";
-            this.ColumnRoomNr.MaxInputLength = 9999999;
-            this.ColumnRoomNr.Name = "ColumnRoomNr";
-            this.ColumnRoomNr.Width = 75;
+            this.buttonSelect.Location = new System.Drawing.Point(13, 153);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(299, 34);
+            this.buttonSelect.TabIndex = 42;
+            this.buttonSelect.Text = "Wybierz";
+            this.buttonSelect.UseVisualStyleBackColor = true;
             // 
-            // ColumnAvailablePlaces
+            // panelReservationData
             // 
-            dataGridViewCellStyle6.NullValue = "Tak";
-            this.ColumnAvailablePlaces.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColumnAvailablePlaces.HeaderText = "Wolne miejsca";
-            this.ColumnAvailablePlaces.Name = "ColumnAvailablePlaces";
-            this.ColumnAvailablePlaces.ReadOnly = true;
+            this.panelReservationData.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panelReservationData.Controls.Add(this.buttonSave);
+            this.panelReservationData.Controls.Add(this.groupBoxReservationData);
+            this.panelReservationData.Controls.Add(this.button_back);
+            this.panelReservationData.Location = new System.Drawing.Point(12, 28);
+            this.panelReservationData.Name = "panelReservationData";
+            this.panelReservationData.Size = new System.Drawing.Size(281, 663);
+            this.panelReservationData.TabIndex = 25;
             // 
-            // ColumnDepartment
+            // comboBoxInfectious
             // 
-            this.ColumnDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.NullValue = "Onkologia";
-            this.ColumnDepartment.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColumnDepartment.HeaderText = "Oddział";
-            this.ColumnDepartment.Name = "ColumnDepartment";
-            this.ColumnDepartment.ReadOnly = true;
-            this.ColumnDepartment.Width = 69;
+            this.comboBoxInfectious.FormattingEnabled = true;
+            this.comboBoxInfectious.Items.AddRange(new object[] {
+            "Tak",
+            "Nie",
+            "Wszystkie"});
+            this.comboBoxInfectious.Location = new System.Drawing.Point(169, 89);
+            this.comboBoxInfectious.Name = "comboBoxInfectious";
+            this.comboBoxInfectious.Size = new System.Drawing.Size(135, 21);
+            this.comboBoxInfectious.TabIndex = 43;
+            this.comboBoxInfectious.Text = "Wszystkie";
+            this.comboBoxInfectious.SelectedIndexChanged += new System.EventHandler(this.comboBoxInfectious_SelectedIndexChanged);
             // 
-            // ColumnBuilding
+            // labelInfectious
             // 
-            this.ColumnBuilding.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.NullValue = "C";
-            this.ColumnBuilding.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ColumnBuilding.HeaderText = "Budynek";
-            this.ColumnBuilding.Name = "ColumnBuilding";
-            this.ColumnBuilding.ReadOnly = true;
-            // 
-            // ColumnHasLinkTo
-            // 
-            this.ColumnHasLinkTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.NullValue = "A, D, E";
-            this.ColumnHasLinkTo.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColumnHasLinkTo.HeaderText = "Ma połączenie z";
-            this.ColumnHasLinkTo.Name = "ColumnHasLinkTo";
-            this.ColumnHasLinkTo.ReadOnly = true;
-            this.ColumnHasLinkTo.Width = 102;
-            // 
-            // ColumnInfectious
-            // 
-            this.ColumnInfectious.HeaderText = "Zakaźna";
-            this.ColumnInfectious.Name = "ColumnInfectious";
-            this.ColumnInfectious.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = "Wybierz";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Column5.HeaderText = "";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.Text = "Wybierz";
+            this.labelInfectious.AutoSize = true;
+            this.labelInfectious.Location = new System.Drawing.Point(166, 73);
+            this.labelInfectious.Name = "labelInfectious";
+            this.labelInfectious.Size = new System.Drawing.Size(49, 13);
+            this.labelInfectious.TabIndex = 44;
+            this.labelInfectious.Text = "Zakaźna";
             // 
             // ReservePatientRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 631);
+            this.ClientSize = new System.Drawing.Size(1027, 736);
+            this.Controls.Add(this.panelReservationData);
             this.Controls.Add(this.panelReservePatientRoom);
             this.Controls.Add(this.dataGridViewPatientRooms);
             this.Name = "ReservePatientRoom";
             this.Text = "Nowa rezerwacja sali chorych";
+            this.Load += new System.EventHandler(this.ReservePatientRoom_Load);
             this.panelReservePatientRoom.ResumeLayout(false);
             this.panelReservePatientRoom.PerformLayout();
             this.groupBoxReservationData.ResumeLayout(false);
@@ -588,8 +505,8 @@
             this.groupBoxRequirements.ResumeLayout(false);
             this.groupBoxRequirements.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequiredEquipment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHasLinkTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientRooms)).EndInit();
+            this.panelReservationData.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -606,8 +523,6 @@
         private System.Windows.Forms.DataGridView dataGridViewRequiredEquipment;
         private System.Windows.Forms.Label labelBuilding;
         private System.Windows.Forms.ComboBox comboBoxBulding;
-        private System.Windows.Forms.CheckBox checkBoxInfectious;
-        private System.Windows.Forms.DataGridView dataGridViewHasLinkTo;
         private System.Windows.Forms.GroupBox groupBoxReservationData;
         private System.Windows.Forms.TextBox textBoxRoom;
         private System.Windows.Forms.Label labelRoom;
@@ -630,16 +545,12 @@
         private System.Windows.Forms.TextBox textBoxSecondName;
         private System.Windows.Forms.GroupBox groupBoxRequirements;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRoomNr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAvailablePlaces;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBuilding;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHasLinkTo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnInfectious;
-        private System.Windows.Forms.DataGridViewButtonColumn Column5;
         private System.Windows.Forms.DataGridViewComboBoxColumn RequiredEquipment;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnDelete;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxHasLinkTo;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumnDelete;
+        private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Button buttonSelect;
+        private System.Windows.Forms.Panel panelReservationData;
+        private System.Windows.Forms.Label labelInfectious;
+        private System.Windows.Forms.ComboBox comboBoxInfectious;
     }
 }

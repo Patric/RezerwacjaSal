@@ -28,18 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewAllPatientRoomReservations = new System.Windows.Forms.DataGridView();
-            this.ColumnReservationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPatientSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPatientPESEL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDoctorSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDoctorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelAllPatientRoomReservations = new System.Windows.Forms.Panel();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -84,16 +73,6 @@
             // dataGridViewAllPatientRoomReservations
             // 
             this.dataGridViewAllPatientRoomReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAllPatientRoomReservations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnReservationID,
-            this.ColumnRoomNr,
-            this.ColumnDepartment,
-            this.ColumnPatientSurname,
-            this.ColumnPatientPESEL,
-            this.ColumnDoctorSurname,
-            this.ColumnDoctorName,
-            this.ColumnFrom,
-            this.ColumnTo});
             this.dataGridViewAllPatientRoomReservations.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewAllPatientRoomReservations.Location = new System.Drawing.Point(12, 312);
             this.dataGridViewAllPatientRoomReservations.Name = "dataGridViewAllPatientRoomReservations";
@@ -105,79 +84,6 @@
             this.dataGridViewAllPatientRoomReservations.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dataGridViewAllPatientRoomReservations_CellStateChanged);
             this.dataGridViewAllPatientRoomReservations.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAllPatientRoomReservations_CellValueChanged);
             this.dataGridViewAllPatientRoomReservations.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewAllPatientRoomReservations_EditingControlShowing);
-            // 
-            // ColumnReservationID
-            // 
-            this.ColumnReservationID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnReservationID.HeaderText = "ID rezerwacji";
-            this.ColumnReservationID.Name = "ColumnReservationID";
-            this.ColumnReservationID.Width = 86;
-            // 
-            // ColumnRoomNr
-            // 
-            this.ColumnRoomNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.NullValue = "751";
-            this.ColumnRoomNr.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ColumnRoomNr.FillWeight = 50F;
-            this.ColumnRoomNr.HeaderText = "Numer sali";
-            this.ColumnRoomNr.MaxInputLength = 9999999;
-            this.ColumnRoomNr.Name = "ColumnRoomNr";
-            this.ColumnRoomNr.Width = 75;
-            // 
-            // ColumnDepartment
-            // 
-            this.ColumnDepartment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.NullValue = "Onkologia";
-            this.ColumnDepartment.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColumnDepartment.HeaderText = "Oddział";
-            this.ColumnDepartment.Name = "ColumnDepartment";
-            this.ColumnDepartment.ReadOnly = true;
-            // 
-            // ColumnPatientSurname
-            // 
-            this.ColumnPatientSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnPatientSurname.HeaderText = "Nazwisko pacjenta";
-            this.ColumnPatientSurname.Name = "ColumnPatientSurname";
-            this.ColumnPatientSurname.ReadOnly = true;
-            this.ColumnPatientSurname.Width = 112;
-            // 
-            // ColumnPatientPESEL
-            // 
-            this.ColumnPatientPESEL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnPatientPESEL.HeaderText = "PESEL pacjenta";
-            this.ColumnPatientPESEL.Name = "ColumnPatientPESEL";
-            this.ColumnPatientPESEL.ReadOnly = true;
-            this.ColumnPatientPESEL.Width = 101;
-            // 
-            // ColumnDoctorSurname
-            // 
-            this.ColumnDoctorSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnDoctorSurname.HeaderText = "Nazwisko lekarza";
-            this.ColumnDoctorSurname.Name = "ColumnDoctorSurname";
-            this.ColumnDoctorSurname.ReadOnly = true;
-            this.ColumnDoctorSurname.Width = 105;
-            // 
-            // ColumnDoctorName
-            // 
-            this.ColumnDoctorName.HeaderText = "Imię lekarza";
-            this.ColumnDoctorName.Name = "ColumnDoctorName";
-            this.ColumnDoctorName.ReadOnly = true;
-            // 
-            // ColumnFrom
-            // 
-            this.ColumnFrom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnFrom.HeaderText = "Od";
-            this.ColumnFrom.Name = "ColumnFrom";
-            this.ColumnFrom.ReadOnly = true;
-            this.ColumnFrom.Width = 46;
-            // 
-            // ColumnTo
-            // 
-            this.ColumnTo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnTo.HeaderText = "Do";
-            this.ColumnTo.Name = "ColumnTo";
-            this.ColumnTo.ReadOnly = true;
-            this.ColumnTo.Width = 46;
             // 
             // panelAllPatientRoomReservations
             // 
@@ -216,6 +122,7 @@
             this.buttonNewReservation.TabIndex = 6;
             this.buttonNewReservation.Text = "Nowa rezerwacja";
             this.buttonNewReservation.UseVisualStyleBackColor = true;
+            this.buttonNewReservation.Click += new System.EventHandler(this.buttonNewReservation_Click);
             // 
             // groupBox2
             // 
@@ -352,6 +259,7 @@
             this.textBoxRoomNumber.Name = "textBoxRoomNumber";
             this.textBoxRoomNumber.Size = new System.Drawing.Size(180, 20);
             this.textBoxRoomNumber.TabIndex = 40;
+            this.textBoxRoomNumber.TextChanged += new System.EventHandler(this.textBoxRoomNumber_TextChanged);
             // 
             // labelTo
             // 
@@ -423,6 +331,7 @@
             this.buttonShowReservations.TabIndex = 22;
             this.buttonShowReservations.Text = "Pokaż rezerwacje";
             this.buttonShowReservations.UseVisualStyleBackColor = true;
+            this.buttonShowReservations.Click += new System.EventHandler(this.buttonShowReservations_Click);
             // 
             // labelDoctorName
             // 
@@ -439,6 +348,7 @@
             this.textBoxReservationNumber.Name = "textBoxReservationNumber";
             this.textBoxReservationNumber.Size = new System.Drawing.Size(180, 20);
             this.textBoxReservationNumber.TabIndex = 28;
+            this.textBoxReservationNumber.TextChanged += new System.EventHandler(this.textBoxReservationNumber_TextChanged);
             // 
             // textBoxDoctorSurname
             // 
@@ -505,6 +415,7 @@
             this.buttonEdit.TabIndex = 8;
             this.buttonEdit.Text = "Edytuj";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -515,6 +426,7 @@
             this.buttonDelete.TabIndex = 9;
             this.buttonDelete.Text = "Usuń";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // PatientRoomReservations
             // 
@@ -574,15 +486,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBoxMenu;
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnReservationID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRoomNr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPatientSurname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPatientPESEL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDoctorSurname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDoctorName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFrom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTo;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
     }

@@ -12,7 +12,14 @@ namespace RezerwacjaSal
 {
     public partial class PatientRoomReservations : Form
     {
+        private DataTable reservationsTable;
+        private DataTable reservationTableFiltered;
+
+        Dictionary<String, Action> filters = new Dictionary<String, Action>();
+
+
         public PatientRoomReservations()
+
         {
             InitializeComponent();
             
@@ -21,9 +28,6 @@ namespace RezerwacjaSal
         private void dataGridViewAllPatientRoomReservations_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-          
-
- 
         }
 
         private void dataGridViewAllPatientRoomReservations_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -41,23 +45,13 @@ namespace RezerwacjaSal
 
         private void dataGridViewAllPatientRoomReservations_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-         
-
-            //if (dataGridViewAllPatientRoomReservations.CurrentCell.ColumnIndex == ColumnOptions.Index)
-            //{
-            //    var comboBox = e.Control as ComboBox;
-                
-            //    Console.WriteLine("Options clicked", comboBox.ValueMember);
-            //    var dataGridView = sender as DataGridView;
-            //    Console.WriteLine(dataGridViewAllPatientRoomReservations.CurrentCell.Value);
-            //    ;
-            //}
+        
         }
 
         private void dataGridViewAllPatientRoomReservations_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
-       
+ 
 
         }
 
@@ -66,9 +60,128 @@ namespace RezerwacjaSal
 
         }
 
+        private void populateReservations()
+        {
+            Stack<Reservation> reservations = DbAdapter.getReservations();
+            this.reservationsTable = new DataTable();
+            reservationsTable.Columns.Add(new DataColumn("Numer Rezerwacji"));
+            reservationsTable.Columns.Add(new DataColumn("Numer sali"));
+            reservationsTable.Columns.Add(new DataColumn("Oddział"));
+            reservationsTable.Columns.Add(new DataColumn("Nazwisko pacjenta"));
+            reservationsTable.Columns.Add(new DataColumn("Numer pacjenta"));
+            reservationsTable.Columns.Add(new DataColumn("Data od"));
+            reservationsTable.Columns.Add(new DataColumn("Data do"));
+
+         
+
+            foreach (var reservation in reservations)
+            {
+                reservationsTable.Rows.Add(
+                    reservation.reservation_id,
+                    reservation.room_number,
+                    null, // department
+                    null, //patient surname
+                    reservation.sick_id, //patient number
+                    reservation.date_from.Replace(" 00:00:00", ""),
+                    reservation.date_to.Replace(" 00:00:00", "")
+                    );
+            }
+
+            dataGridViewAllPatientRoomReservations.DataSource = this.reservationsTable;
+            dataGridViewAllPatientRoomReservations.ReadOnly = true;
+            dataGridViewAllPatientRoomReservations.AutoGenerateColumns = true;
+            dataGridViewAllPatientRoomReservations.AutoResizeColumns();
+            dataGridViewAllPatientRoomReservations.Refresh();
+
+           
+        }
+
+
         private void PatientRoomReservations_Load(object sender, EventArgs e)
         {
-            DbAdapter.getReservations();
+            this.populateReservations();
+
+
+        }
+
+        private void buttonShowReservations_Click(object sender, EventArgs e)
+        {
+            this.populateReservations();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            // DbAdapter.delete(reservation)
+
+
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            // Navigator.navigateChild(new ReservePatientRoom(reservation), this);
+        }
+
+        private void buttonNewReservation_Click(object sender, EventArgs e)
+        {
+            Navigator.navigateToChild(new ReservePatientRoom(), this);
+        }
+
+
+
+        private void filterTable(String columnName, String value)
+        {
+                // If already contains filter for certain column delete it
+                if (this.filters.ContainsKey(columnName))
+                {
+                    this.filters.Remove(columnName);
+                }
+
+
+            // get original table
+            this.reservationTableFiltered = this.reservationsTable.Copy();
+
+
+            // add new filter
+            this.filters.Add(columnName, () => {
+                for (int i = 0; i < this.reservationTableFiltered.Rows.Count; i++)
+                {
+                    if (!this.reservationTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
+                    {
+
+                        this.reservationTableFiltered.Rows[i].Delete();
+                      
+
+                    }
+                }
+            });
+
+
+       
+
+            // For method in filterMethods
+            // do filtermethod
+            foreach(var item in this.filters)
+            {
+                item.Value.Invoke();
+            }
+
+            dataGridViewAllPatientRoomReservations.DataSource = this.reservationTableFiltered;
+            dataGridViewAllPatientRoomReservations.ReadOnly = true;
+            dataGridViewAllPatientRoomReservations.AutoGenerateColumns = true;
+            dataGridViewAllPatientRoomReservations.AutoResizeColumns();
+            dataGridViewAllPatientRoomReservations.Refresh();
+        }
+
+
+        private void textBoxReservationNumber_TextChanged(object sender, EventArgs e)
+        {
+            this.filterTable("Numer rezerwacji", this.textBoxReservationNumber.Text);
+            
+        }
+
+        private void textBoxRoomNumber_TextChanged(object sender, EventArgs e)
+        {
+            this.filterTable("Numer sali", this.textBoxRoomNumber.Text);
         }
     }
 }
