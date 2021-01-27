@@ -28,11 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelReservePatientRoom = new System.Windows.Forms.Panel();
+            this.groupBoxRequirements = new System.Windows.Forms.GroupBox();
+            this.labelInfectious = new System.Windows.Forms.Label();
+            this.comboBoxInfectious = new System.Windows.Forms.ComboBox();
+            this.buttonSelect = new System.Windows.Forms.Button();
+            this.labelCheckInDate = new System.Windows.Forms.Label();
+            this.dataGridViewRequiredEquipment = new System.Windows.Forms.DataGridView();
+            this.RequiredEquipment = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dateTimePickerCheckInDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerCheckOutDate = new System.Windows.Forms.DateTimePicker();
+            this.labelBuilding = new System.Windows.Forms.Label();
+            this.labelCheckOutDate = new System.Windows.Forms.Label();
+            this.comboBoxBulding = new System.Windows.Forms.ComboBox();
+            this.labelReservePatientRoom = new System.Windows.Forms.Label();
             this.groupBoxReservationData = new System.Windows.Forms.GroupBox();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxRoom = new System.Windows.Forms.TextBox();
             this.labelRoom = new System.Windows.Forms.Label();
             this.textBoxReservationNr = new System.Windows.Forms.TextBox();
@@ -49,250 +62,30 @@
             this.labelSurname = new System.Windows.Forms.Label();
             this.labelPESEL = new System.Windows.Forms.Label();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBoxPESEL = new System.Windows.Forms.TextBox();
+            this.textBoxId = new System.Windows.Forms.TextBox();
             this.labelSecondName = new System.Windows.Forms.Label();
             this.textBoxSecondName = new System.Windows.Forms.TextBox();
-            this.groupBoxRequirements = new System.Windows.Forms.GroupBox();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
-            this.labelCheckInDate = new System.Windows.Forms.Label();
-            this.dataGridViewRequiredEquipment = new System.Windows.Forms.DataGridView();
-            this.RequiredEquipment = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dateTimePickerCheckInDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerCheckOutDate = new System.Windows.Forms.DateTimePicker();
-            this.labelBuilding = new System.Windows.Forms.Label();
-            this.labelCheckOutDate = new System.Windows.Forms.Label();
-            this.comboBoxBulding = new System.Windows.Forms.ComboBox();
-            this.labelReservePatientRoom = new System.Windows.Forms.Label();
             this.dataGridViewPatientRooms = new System.Windows.Forms.DataGridView();
-            this.buttonSelect = new System.Windows.Forms.Button();
             this.panelReservationData = new System.Windows.Forms.Panel();
-            this.comboBoxInfectious = new System.Windows.Forms.ComboBox();
-            this.labelInfectious = new System.Windows.Forms.Label();
             this.panelReservePatientRoom.SuspendLayout();
-            this.groupBoxReservationData.SuspendLayout();
             this.groupBoxRequirements.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequiredEquipment)).BeginInit();
+            this.groupBoxReservationData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientRooms)).BeginInit();
-            this.panelReservationData.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelReservePatientRoom
             // 
             this.panelReservePatientRoom.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panelReservePatientRoom.Controls.Add(this.groupBoxRequirements);
+            this.panelReservePatientRoom.Controls.Add(this.groupBoxReservationData);
             this.panelReservePatientRoom.Controls.Add(this.labelReservePatientRoom);
-            this.panelReservePatientRoom.Location = new System.Drawing.Point(302, 28);
+            this.panelReservePatientRoom.Location = new System.Drawing.Point(334, 12);
             this.panelReservePatientRoom.Name = "panelReservePatientRoom";
-            this.panelReservePatientRoom.Size = new System.Drawing.Size(713, 266);
+            this.panelReservePatientRoom.Size = new System.Drawing.Size(1118, 286);
             this.panelReservePatientRoom.TabIndex = 4;
-            // 
-            // groupBoxReservationData
-            // 
-            this.groupBoxReservationData.Controls.Add(this.textBoxRoom);
-            this.groupBoxReservationData.Controls.Add(this.labelRoom);
-            this.groupBoxReservationData.Controls.Add(this.textBoxReservationNr);
-            this.groupBoxReservationData.Controls.Add(this.labelReservationNumber);
-            this.groupBoxReservationData.Controls.Add(this.labelFrom);
-            this.groupBoxReservationData.Controls.Add(this.textBoxFrom);
-            this.groupBoxReservationData.Controls.Add(this.labelTo);
-            this.groupBoxReservationData.Controls.Add(this.textBoxTo);
-            this.groupBoxReservationData.Controls.Add(this.labelSicknessName);
-            this.groupBoxReservationData.Controls.Add(this.labelFirstNme);
-            this.groupBoxReservationData.Controls.Add(this.comboBoxSicknessNr);
-            this.groupBoxReservationData.Controls.Add(this.textBoxFirstName);
-            this.groupBoxReservationData.Controls.Add(this.labelSicknessSymbol);
-            this.groupBoxReservationData.Controls.Add(this.labelSurname);
-            this.groupBoxReservationData.Controls.Add(this.labelPESEL);
-            this.groupBoxReservationData.Controls.Add(this.textBoxSurname);
-            this.groupBoxReservationData.Controls.Add(this.textBoxPESEL);
-            this.groupBoxReservationData.Controls.Add(this.labelSecondName);
-            this.groupBoxReservationData.Controls.Add(this.textBoxSecondName);
-            this.groupBoxReservationData.Location = new System.Drawing.Point(13, 20);
-            this.groupBoxReservationData.Name = "groupBoxReservationData";
-            this.groupBoxReservationData.Size = new System.Drawing.Size(252, 448);
-            this.groupBoxReservationData.TabIndex = 25;
-            this.groupBoxReservationData.TabStop = false;
-            this.groupBoxReservationData.Text = "Dane rezerwacji";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(13, 493);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(252, 47);
-            this.buttonSave.TabIndex = 40;
-            this.buttonSave.Text = "Zapisz";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            // 
-            // textBoxRoom
-            // 
-            this.textBoxRoom.Location = new System.Drawing.Point(108, 333);
-            this.textBoxRoom.Name = "textBoxRoom";
-            this.textBoxRoom.ReadOnly = true;
-            this.textBoxRoom.Size = new System.Drawing.Size(123, 20);
-            this.textBoxRoom.TabIndex = 39;
-            this.textBoxRoom.Text = "751/C";
-            // 
-            // labelRoom
-            // 
-            this.labelRoom.AutoSize = true;
-            this.labelRoom.Location = new System.Drawing.Point(16, 337);
-            this.labelRoom.Name = "labelRoom";
-            this.labelRoom.Size = new System.Drawing.Size(28, 13);
-            this.labelRoom.TabIndex = 38;
-            this.labelRoom.Text = "Sala";
-            // 
-            // textBoxReservationNr
-            // 
-            this.textBoxReservationNr.Location = new System.Drawing.Point(108, 61);
-            this.textBoxReservationNr.Name = "textBoxReservationNr";
-            this.textBoxReservationNr.ReadOnly = true;
-            this.textBoxReservationNr.Size = new System.Drawing.Size(123, 20);
-            this.textBoxReservationNr.TabIndex = 37;
-            // 
-            // labelReservationNumber
-            // 
-            this.labelReservationNumber.AutoSize = true;
-            this.labelReservationNumber.Location = new System.Drawing.Point(16, 64);
-            this.labelReservationNumber.Name = "labelReservationNumber";
-            this.labelReservationNumber.Size = new System.Drawing.Size(88, 13);
-            this.labelReservationNumber.TabIndex = 36;
-            this.labelReservationNumber.Text = "Numer rezerwacji";
-            // 
-            // labelFrom
-            // 
-            this.labelFrom.AutoSize = true;
-            this.labelFrom.Location = new System.Drawing.Point(16, 284);
-            this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(21, 13);
-            this.labelFrom.TabIndex = 33;
-            this.labelFrom.Text = "Od";
-            // 
-            // textBoxFrom
-            // 
-            this.textBoxFrom.Location = new System.Drawing.Point(108, 281);
-            this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.ReadOnly = true;
-            this.textBoxFrom.Size = new System.Drawing.Size(123, 20);
-            this.textBoxFrom.TabIndex = 32;
-            this.textBoxFrom.Text = "09/12/2020";
-            // 
-            // labelTo
-            // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Location = new System.Drawing.Point(16, 307);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(21, 13);
-            this.labelTo.TabIndex = 34;
-            this.labelTo.Text = "Do";
-            // 
-            // textBoxTo
-            // 
-            this.textBoxTo.Location = new System.Drawing.Point(108, 307);
-            this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.ReadOnly = true;
-            this.textBoxTo.Size = new System.Drawing.Size(123, 20);
-            this.textBoxTo.TabIndex = 35;
-            this.textBoxTo.Text = "09/12/2020";
-            // 
-            // labelSicknessName
-            // 
-            this.labelSicknessName.AutoSize = true;
-            this.labelSicknessName.Location = new System.Drawing.Point(105, 214);
-            this.labelSicknessName.Name = "labelSicknessName";
-            this.labelSicknessName.Size = new System.Drawing.Size(85, 13);
-            this.labelSicknessName.TabIndex = 31;
-            this.labelSicknessName.Text = "Brak nogi - lewej";
-            // 
-            // labelFirstNme
-            // 
-            this.labelFirstNme.AutoSize = true;
-            this.labelFirstNme.Location = new System.Drawing.Point(16, 87);
-            this.labelFirstNme.Name = "labelFirstNme";
-            this.labelFirstNme.Size = new System.Drawing.Size(70, 13);
-            this.labelFirstNme.TabIndex = 22;
-            this.labelFirstNme.Text = "Pierwsze imię";
-            // 
-            // comboBoxSicknessNr
-            // 
-            this.comboBoxSicknessNr.FormattingEnabled = true;
-            this.comboBoxSicknessNr.Items.AddRange(new object[] {
-            "BN-01L",
-            "BN-02L",
-            "BN-01P"});
-            this.comboBoxSicknessNr.Location = new System.Drawing.Point(108, 190);
-            this.comboBoxSicknessNr.Name = "comboBoxSicknessNr";
-            this.comboBoxSicknessNr.Size = new System.Drawing.Size(123, 21);
-            this.comboBoxSicknessNr.TabIndex = 30;
-            this.comboBoxSicknessNr.Text = "BN-01L";
-            // 
-            // textBoxFirstName
-            // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(108, 84);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(123, 20);
-            this.textBoxFirstName.TabIndex = 21;
-            this.textBoxFirstName.Text = "Jan";
-            // 
-            // labelSicknessSymbol
-            // 
-            this.labelSicknessSymbol.AutoSize = true;
-            this.labelSicknessSymbol.Location = new System.Drawing.Point(16, 193);
-            this.labelSicknessSymbol.Name = "labelSicknessSymbol";
-            this.labelSicknessSymbol.Size = new System.Drawing.Size(82, 13);
-            this.labelSicknessSymbol.TabIndex = 29;
-            this.labelSicknessSymbol.Text = "Symbol choroby";
-            // 
-            // labelSurname
-            // 
-            this.labelSurname.AutoSize = true;
-            this.labelSurname.Location = new System.Drawing.Point(16, 137);
-            this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(53, 13);
-            this.labelSurname.TabIndex = 23;
-            this.labelSurname.Text = "Nazwisko";
-            // 
-            // labelPESEL
-            // 
-            this.labelPESEL.AutoSize = true;
-            this.labelPESEL.Location = new System.Drawing.Point(16, 166);
-            this.labelPESEL.Name = "labelPESEL";
-            this.labelPESEL.Size = new System.Drawing.Size(82, 13);
-            this.labelPESEL.TabIndex = 28;
-            this.labelPESEL.Text = "Numer pacjenta";
-            // 
-            // textBoxSurname
-            // 
-            this.textBoxSurname.Location = new System.Drawing.Point(108, 137);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(123, 20);
-            this.textBoxSurname.TabIndex = 24;
-            this.textBoxSurname.Text = "Kowalski";
-            // 
-            // textBoxPESEL
-            // 
-            this.textBoxPESEL.Location = new System.Drawing.Point(108, 163);
-            this.textBoxPESEL.Name = "textBoxPESEL";
-            this.textBoxPESEL.Size = new System.Drawing.Size(123, 20);
-            this.textBoxPESEL.TabIndex = 27;
-            this.textBoxPESEL.Text = "76021309332";
-            // 
-            // labelSecondName
-            // 
-            this.labelSecondName.AutoSize = true;
-            this.labelSecondName.Location = new System.Drawing.Point(16, 110);
-            this.labelSecondName.Name = "labelSecondName";
-            this.labelSecondName.Size = new System.Drawing.Size(59, 13);
-            this.labelSecondName.TabIndex = 25;
-            this.labelSecondName.Text = "Drugie imię";
-            // 
-            // textBoxSecondName
-            // 
-            this.textBoxSecondName.Location = new System.Drawing.Point(108, 110);
-            this.textBoxSecondName.Name = "textBoxSecondName";
-            this.textBoxSecondName.Size = new System.Drawing.Size(123, 20);
-            this.textBoxSecondName.TabIndex = 26;
-            this.textBoxSecondName.Text = "Michał";
             // 
             // groupBoxRequirements
             // 
@@ -308,21 +101,43 @@
             this.groupBoxRequirements.Controls.Add(this.comboBoxBulding);
             this.groupBoxRequirements.Location = new System.Drawing.Point(7, 33);
             this.groupBoxRequirements.Name = "groupBoxRequirements";
-            this.groupBoxRequirements.Size = new System.Drawing.Size(681, 207);
+            this.groupBoxRequirements.Size = new System.Drawing.Size(666, 230);
             this.groupBoxRequirements.TabIndex = 24;
             this.groupBoxRequirements.TabStop = false;
             this.groupBoxRequirements.Text = "Wymagania";
             this.groupBoxRequirements.Enter += new System.EventHandler(this.groupBoxRequirements_Enter);
             // 
-            // button_back
+            // labelInfectious
             // 
-            this.button_back.Location = new System.Drawing.Point(13, 564);
-            this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(252, 44);
-            this.button_back.TabIndex = 41;
-            this.button_back.Text = "Wstecz";
-            this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            this.labelInfectious.AutoSize = true;
+            this.labelInfectious.Location = new System.Drawing.Point(166, 73);
+            this.labelInfectious.Name = "labelInfectious";
+            this.labelInfectious.Size = new System.Drawing.Size(49, 13);
+            this.labelInfectious.TabIndex = 44;
+            this.labelInfectious.Text = "Zakaźna";
+            // 
+            // comboBoxInfectious
+            // 
+            this.comboBoxInfectious.FormattingEnabled = true;
+            this.comboBoxInfectious.Items.AddRange(new object[] {
+            "Tak",
+            "Nie",
+            "Wszystkie"});
+            this.comboBoxInfectious.Location = new System.Drawing.Point(169, 89);
+            this.comboBoxInfectious.Name = "comboBoxInfectious";
+            this.comboBoxInfectious.Size = new System.Drawing.Size(135, 21);
+            this.comboBoxInfectious.TabIndex = 43;
+            this.comboBoxInfectious.Text = "Wszystkie";
+            this.comboBoxInfectious.SelectedIndexChanged += new System.EventHandler(this.comboBoxInfectious_SelectedIndexChanged);
+            // 
+            // buttonSelect
+            // 
+            this.buttonSelect.Location = new System.Drawing.Point(14, 174);
+            this.buttonSelect.Name = "buttonSelect";
+            this.buttonSelect.Size = new System.Drawing.Size(299, 34);
+            this.buttonSelect.TabIndex = 42;
+            this.buttonSelect.Text = "Wybierz";
+            this.buttonSelect.UseVisualStyleBackColor = true;
             // 
             // labelCheckInDate
             // 
@@ -341,15 +156,15 @@
             this.ColumnDelete});
             this.dataGridViewRequiredEquipment.Location = new System.Drawing.Point(332, 29);
             this.dataGridViewRequiredEquipment.Name = "dataGridViewRequiredEquipment";
-            this.dataGridViewRequiredEquipment.Size = new System.Drawing.Size(296, 158);
+            this.dataGridViewRequiredEquipment.Size = new System.Drawing.Size(296, 179);
             this.dataGridViewRequiredEquipment.TabIndex = 18;
             this.dataGridViewRequiredEquipment.VirtualMode = true;
             // 
             // RequiredEquipment
             // 
             this.RequiredEquipment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.NullValue = "wybierz sprzęt";
-            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.NullValue = "wybierz sprzęt";
+            this.RequiredEquipment.DefaultCellStyle = dataGridViewCellStyle1;
             this.RequiredEquipment.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.RequiredEquipment.FillWeight = 139.0863F;
             this.RequiredEquipment.HeaderText = "Wymagany sprzęt";
@@ -364,9 +179,9 @@
             // ColumnDelete
             // 
             this.ColumnDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "Usuń";
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "Usuń";
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnDelete.FillWeight = 60.9137F;
             this.ColumnDelete.HeaderText = "";
             this.ColumnDelete.Name = "ColumnDelete";
@@ -435,63 +250,251 @@
             this.labelReservePatientRoom.TabIndex = 1;
             this.labelReservePatientRoom.Text = "Rezerwuj salę chorych";
             // 
+            // groupBoxReservationData
+            // 
+            this.groupBoxReservationData.Controls.Add(this.button_back);
+            this.groupBoxReservationData.Controls.Add(this.buttonSave);
+            this.groupBoxReservationData.Controls.Add(this.textBoxRoom);
+            this.groupBoxReservationData.Controls.Add(this.labelRoom);
+            this.groupBoxReservationData.Controls.Add(this.textBoxReservationNr);
+            this.groupBoxReservationData.Controls.Add(this.labelReservationNumber);
+            this.groupBoxReservationData.Controls.Add(this.labelFrom);
+            this.groupBoxReservationData.Controls.Add(this.textBoxFrom);
+            this.groupBoxReservationData.Controls.Add(this.labelTo);
+            this.groupBoxReservationData.Controls.Add(this.textBoxTo);
+            this.groupBoxReservationData.Controls.Add(this.labelSicknessName);
+            this.groupBoxReservationData.Controls.Add(this.labelFirstNme);
+            this.groupBoxReservationData.Controls.Add(this.comboBoxSicknessNr);
+            this.groupBoxReservationData.Controls.Add(this.textBoxFirstName);
+            this.groupBoxReservationData.Controls.Add(this.labelSicknessSymbol);
+            this.groupBoxReservationData.Controls.Add(this.labelSurname);
+            this.groupBoxReservationData.Controls.Add(this.labelPESEL);
+            this.groupBoxReservationData.Controls.Add(this.textBoxSurname);
+            this.groupBoxReservationData.Controls.Add(this.textBoxId);
+            this.groupBoxReservationData.Controls.Add(this.labelSecondName);
+            this.groupBoxReservationData.Controls.Add(this.textBoxSecondName);
+            this.groupBoxReservationData.Location = new System.Drawing.Point(700, 33);
+            this.groupBoxReservationData.Name = "groupBoxReservationData";
+            this.groupBoxReservationData.Size = new System.Drawing.Size(397, 230);
+            this.groupBoxReservationData.TabIndex = 25;
+            this.groupBoxReservationData.TabStop = false;
+            this.groupBoxReservationData.Text = "Dane rezerwacji";
+            // 
+            // textBoxRoom
+            // 
+            this.textBoxRoom.Location = new System.Drawing.Point(108, 333);
+            this.textBoxRoom.Name = "textBoxRoom";
+            this.textBoxRoom.ReadOnly = true;
+            this.textBoxRoom.Size = new System.Drawing.Size(123, 20);
+            this.textBoxRoom.TabIndex = 39;
+            this.textBoxRoom.Text = "751/C";
+            // 
+            // labelRoom
+            // 
+            this.labelRoom.AutoSize = true;
+            this.labelRoom.Location = new System.Drawing.Point(16, 337);
+            this.labelRoom.Name = "labelRoom";
+            this.labelRoom.Size = new System.Drawing.Size(28, 13);
+            this.labelRoom.TabIndex = 38;
+            this.labelRoom.Text = "Sala";
+            // 
+            // textBoxReservationNr
+            // 
+            this.textBoxReservationNr.Location = new System.Drawing.Point(110, 34);
+            this.textBoxReservationNr.Name = "textBoxReservationNr";
+            this.textBoxReservationNr.ReadOnly = true;
+            this.textBoxReservationNr.Size = new System.Drawing.Size(123, 20);
+            this.textBoxReservationNr.TabIndex = 37;
+            // 
+            // labelReservationNumber
+            // 
+            this.labelReservationNumber.AutoSize = true;
+            this.labelReservationNumber.Location = new System.Drawing.Point(16, 34);
+            this.labelReservationNumber.Name = "labelReservationNumber";
+            this.labelReservationNumber.Size = new System.Drawing.Size(88, 13);
+            this.labelReservationNumber.TabIndex = 36;
+            this.labelReservationNumber.Text = "Numer rezerwacji";
+            // 
+            // labelFrom
+            // 
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(16, 284);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(21, 13);
+            this.labelFrom.TabIndex = 33;
+            this.labelFrom.Text = "Od";
+            // 
+            // textBoxFrom
+            // 
+            this.textBoxFrom.Location = new System.Drawing.Point(108, 281);
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.ReadOnly = true;
+            this.textBoxFrom.Size = new System.Drawing.Size(123, 20);
+            this.textBoxFrom.TabIndex = 32;
+            this.textBoxFrom.Text = "09/12/2020";
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(16, 307);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(21, 13);
+            this.labelTo.TabIndex = 34;
+            this.labelTo.Text = "Do";
+            // 
+            // textBoxTo
+            // 
+            this.textBoxTo.Location = new System.Drawing.Point(108, 307);
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.ReadOnly = true;
+            this.textBoxTo.Size = new System.Drawing.Size(123, 20);
+            this.textBoxTo.TabIndex = 35;
+            this.textBoxTo.Text = "09/12/2020";
+            // 
+            // labelSicknessName
+            // 
+            this.labelSicknessName.AutoSize = true;
+            this.labelSicknessName.Location = new System.Drawing.Point(123, 195);
+            this.labelSicknessName.Name = "labelSicknessName";
+            this.labelSicknessName.Size = new System.Drawing.Size(85, 13);
+            this.labelSicknessName.TabIndex = 31;
+            this.labelSicknessName.Text = "Brak nogi - lewej";
+            // 
+            // labelFirstNme
+            // 
+            this.labelFirstNme.AutoSize = true;
+            this.labelFirstNme.Location = new System.Drawing.Point(16, 67);
+            this.labelFirstNme.Name = "labelFirstNme";
+            this.labelFirstNme.Size = new System.Drawing.Size(70, 13);
+            this.labelFirstNme.TabIndex = 22;
+            this.labelFirstNme.Text = "Pierwsze imię";
+            // 
+            // comboBoxSicknessNr
+            // 
+            this.comboBoxSicknessNr.FormattingEnabled = true;
+            this.comboBoxSicknessNr.Items.AddRange(new object[] {
+            "BN-01L",
+            "BN-02L",
+            "BN-01P"});
+            this.comboBoxSicknessNr.Location = new System.Drawing.Point(110, 171);
+            this.comboBoxSicknessNr.Name = "comboBoxSicknessNr";
+            this.comboBoxSicknessNr.Size = new System.Drawing.Size(123, 21);
+            this.comboBoxSicknessNr.TabIndex = 30;
+            this.comboBoxSicknessNr.Text = "BN-01L";
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxFirstName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxFirstName.Location = new System.Drawing.Point(110, 60);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(123, 20);
+            this.textBoxFirstName.TabIndex = 21;
+            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
+            // 
+            // labelSicknessSymbol
+            // 
+            this.labelSicknessSymbol.AutoSize = true;
+            this.labelSicknessSymbol.Location = new System.Drawing.Point(16, 174);
+            this.labelSicknessSymbol.Name = "labelSicknessSymbol";
+            this.labelSicknessSymbol.Size = new System.Drawing.Size(82, 13);
+            this.labelSicknessSymbol.TabIndex = 29;
+            this.labelSicknessSymbol.Text = "Symbol choroby";
+            // 
+            // labelSurname
+            // 
+            this.labelSurname.AutoSize = true;
+            this.labelSurname.Location = new System.Drawing.Point(16, 120);
+            this.labelSurname.Name = "labelSurname";
+            this.labelSurname.Size = new System.Drawing.Size(53, 13);
+            this.labelSurname.TabIndex = 23;
+            this.labelSurname.Text = "Nazwisko";
+            // 
+            // labelPESEL
+            // 
+            this.labelPESEL.AutoSize = true;
+            this.labelPESEL.Location = new System.Drawing.Point(16, 148);
+            this.labelPESEL.Name = "labelPESEL";
+            this.labelPESEL.Size = new System.Drawing.Size(82, 13);
+            this.labelPESEL.TabIndex = 28;
+            this.labelPESEL.Text = "Numer pacjenta";
+            // 
+            // textBoxSurname
+            // 
+            this.textBoxSurname.Location = new System.Drawing.Point(110, 115);
+            this.textBoxSurname.Name = "textBoxSurname";
+            this.textBoxSurname.Size = new System.Drawing.Size(123, 20);
+            this.textBoxSurname.TabIndex = 24;
+            this.textBoxSurname.Text = "Kowalski";
+            // 
+            // textBoxId
+            // 
+            this.textBoxId.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxId.Location = new System.Drawing.Point(110, 145);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.Size = new System.Drawing.Size(123, 20);
+            this.textBoxId.TabIndex = 27;
+            this.textBoxId.Text = "76021309332";
+            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
+            // 
+            // labelSecondName
+            // 
+            this.labelSecondName.AutoSize = true;
+            this.labelSecondName.Location = new System.Drawing.Point(16, 93);
+            this.labelSecondName.Name = "labelSecondName";
+            this.labelSecondName.Size = new System.Drawing.Size(59, 13);
+            this.labelSecondName.TabIndex = 25;
+            this.labelSecondName.Text = "Drugie imię";
+            // 
+            // textBoxSecondName
+            // 
+            this.textBoxSecondName.Location = new System.Drawing.Point(110, 89);
+            this.textBoxSecondName.Name = "textBoxSecondName";
+            this.textBoxSecondName.Size = new System.Drawing.Size(123, 20);
+            this.textBoxSecondName.TabIndex = 26;
+            this.textBoxSecondName.Text = "Michał";
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(248, 29);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(134, 47);
+            this.buttonSave.TabIndex = 40;
+            this.buttonSave.Text = "Zapisz";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // button_back
+            // 
+            this.button_back.Location = new System.Drawing.Point(250, 93);
+            this.button_back.Name = "button_back";
+            this.button_back.Size = new System.Drawing.Size(141, 44);
+            this.button_back.TabIndex = 41;
+            this.button_back.Text = "Wstecz";
+            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
+            // 
             // dataGridViewPatientRooms
             // 
             this.dataGridViewPatientRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPatientRooms.Location = new System.Drawing.Point(299, 304);
+            this.dataGridViewPatientRooms.Location = new System.Drawing.Point(334, 304);
             this.dataGridViewPatientRooms.Name = "dataGridViewPatientRooms";
-            this.dataGridViewPatientRooms.Size = new System.Drawing.Size(713, 387);
+            this.dataGridViewPatientRooms.Size = new System.Drawing.Size(688, 387);
             this.dataGridViewPatientRooms.TabIndex = 3;
             this.dataGridViewPatientRooms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPatientRooms_CellContentClick);
-            // 
-            // buttonSelect
-            // 
-            this.buttonSelect.Location = new System.Drawing.Point(13, 153);
-            this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(299, 34);
-            this.buttonSelect.TabIndex = 42;
-            this.buttonSelect.Text = "Wybierz";
-            this.buttonSelect.UseVisualStyleBackColor = true;
             // 
             // panelReservationData
             // 
             this.panelReservationData.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panelReservationData.Controls.Add(this.buttonSave);
-            this.panelReservationData.Controls.Add(this.groupBoxReservationData);
-            this.panelReservationData.Controls.Add(this.button_back);
             this.panelReservationData.Location = new System.Drawing.Point(12, 28);
             this.panelReservationData.Name = "panelReservationData";
             this.panelReservationData.Size = new System.Drawing.Size(281, 663);
             this.panelReservationData.TabIndex = 25;
             // 
-            // comboBoxInfectious
-            // 
-            this.comboBoxInfectious.FormattingEnabled = true;
-            this.comboBoxInfectious.Items.AddRange(new object[] {
-            "Tak",
-            "Nie",
-            "Wszystkie"});
-            this.comboBoxInfectious.Location = new System.Drawing.Point(169, 89);
-            this.comboBoxInfectious.Name = "comboBoxInfectious";
-            this.comboBoxInfectious.Size = new System.Drawing.Size(135, 21);
-            this.comboBoxInfectious.TabIndex = 43;
-            this.comboBoxInfectious.Text = "Wszystkie";
-            this.comboBoxInfectious.SelectedIndexChanged += new System.EventHandler(this.comboBoxInfectious_SelectedIndexChanged);
-            // 
-            // labelInfectious
-            // 
-            this.labelInfectious.AutoSize = true;
-            this.labelInfectious.Location = new System.Drawing.Point(166, 73);
-            this.labelInfectious.Name = "labelInfectious";
-            this.labelInfectious.Size = new System.Drawing.Size(49, 13);
-            this.labelInfectious.TabIndex = 44;
-            this.labelInfectious.Text = "Zakaźna";
-            // 
             // ReservePatientRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 736);
+            this.ClientSize = new System.Drawing.Size(1472, 736);
             this.Controls.Add(this.panelReservationData);
             this.Controls.Add(this.panelReservePatientRoom);
             this.Controls.Add(this.dataGridViewPatientRooms);
@@ -500,13 +503,12 @@
             this.Load += new System.EventHandler(this.ReservePatientRoom_Load);
             this.panelReservePatientRoom.ResumeLayout(false);
             this.panelReservePatientRoom.PerformLayout();
-            this.groupBoxReservationData.ResumeLayout(false);
-            this.groupBoxReservationData.PerformLayout();
             this.groupBoxRequirements.ResumeLayout(false);
             this.groupBoxRequirements.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRequiredEquipment)).EndInit();
+            this.groupBoxReservationData.ResumeLayout(false);
+            this.groupBoxReservationData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPatientRooms)).EndInit();
-            this.panelReservationData.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -540,7 +542,7 @@
         private System.Windows.Forms.Label labelSurname;
         private System.Windows.Forms.Label labelPESEL;
         private System.Windows.Forms.TextBox textBoxSurname;
-        private System.Windows.Forms.TextBox textBoxPESEL;
+        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label labelSecondName;
         private System.Windows.Forms.TextBox textBoxSecondName;
         private System.Windows.Forms.GroupBox groupBoxRequirements;

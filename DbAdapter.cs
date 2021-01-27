@@ -101,6 +101,7 @@ namespace RezerwacjaSal
 
         }
 
+        // Łatwiejsze, ale nie uzywamy
         public static DataTable getReservationsTable()
         {
 
@@ -142,9 +143,6 @@ namespace RezerwacjaSal
         }
 
 
-
-
-
         public static Stack<PatientRoom> getPatientRooms()
         {
 
@@ -182,7 +180,8 @@ namespace RezerwacjaSal
                         dr["department"].ToString(),
                         dr["building"].ToString(),
                         dr["type"].ToString(),
-                        dr["equipment"].ToString()));
+                        null));
+                        //dr["equipment"].ToString()));
                 }
 
                 return patientRooms;
@@ -201,7 +200,58 @@ namespace RezerwacjaSal
 
 
 
+        public static Stack<Patient> getPatients()
+        {
 
+            try
+            {
+
+                string query = "Select * FROM patients ;"; // WHERE " rooms.available = true ;"
+
+
+                Console.WriteLine(query);
+
+
+
+                DataTable queryData = new DataTable();
+
+
+
+                using (var connection = new MySqlConnection(connectionString))
+
+           
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                {
+                    adapter.Fill(queryData);
+                }
+
+                Console.WriteLine(queryData);
+
+                Stack<Patient> patients = new Stack<Patient>();
+
+                foreach (DataRow dr in queryData.Rows)
+                {
+
+                    patients.Push(new Patient(
+                        dr["id"].ToString(),
+                        dr["name"].ToString(),
+                        dr["surname"].ToString(),
+                        dr["illness"].ToString(),
+                        dr["infectious"].ToString()));
+                }
+
+                return patients;
+
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message, "Wystąpił błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return null;
+
+        }
 
 
 

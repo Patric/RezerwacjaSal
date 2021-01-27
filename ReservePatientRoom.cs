@@ -14,10 +14,11 @@ namespace RezerwacjaSal
     {
         private DataTable roomsTable;
         private DataTable roomsTableFiltered;
+        private DataTable patientsTable;
+        private DataTable patientsTableFiltered;
 
         Dictionary<String, Action> filters = new Dictionary<String, Action>();
-
-
+        Dictionary<String, Action> patientFilters = new Dictionary<String, Action>();
 
         public ReservePatientRoom()
         {
@@ -50,6 +51,74 @@ namespace RezerwacjaSal
 
         }
 
+        private void populatePatients()
+        {
+            Stack<Patient> patients = DbAdapter.getPatients();
+            this.patientsTable = new DataTable();
+            patientsTable.Columns.Add(new DataColumn("Id"));
+            patientsTable.Columns.Add(new DataColumn("Imie"));
+            patientsTable.Columns.Add(new DataColumn("Nazwisko"));
+            patientsTable.Columns.Add(new DataColumn("Choroba"));
+            patientsTable.Columns.Add(new DataColumn("Czy zakaźna?"));
+
+
+            foreach (var patient in patients)
+            {
+                patientsTable.Rows.Add(
+                   patient.id,
+                   patient.name,
+                   patient.surname,
+                   patient.illness,
+                   patient.infectious
+                );
+            }
+
+
+
+          
+            String[] sicknessesAutoComplete;
+
+            String[] idAutoComplete = patientsTable
+                    .AsEnumerable()
+                    .Select<System.Data.DataRow, String>(x => x.Field<String>("Id"))
+                    .ToArray();
+
+            String[] namesAutoComplete = patientsTable
+                    .AsEnumerable()
+                    .Select<System.Data.DataRow, String>(x => x.Field<String>("Imie"))
+                    .ToArray();
+
+
+            String[] surnamesAutoComplete = patientsTable
+                  .AsEnumerable()
+                  .Select<System.Data.DataRow, String>(x => x.Field<String>("Nazwisko"))
+                  .ToArray();
+
+
+
+
+            var source = new AutoCompleteStringCollection();
+            source.AddRange(namesAutoComplete);
+            textBoxFirstName.AutoCompleteCustomSource = source;
+            textBoxFirstName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBoxFirstName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
+            source = new AutoCompleteStringCollection();
+            source.AddRange(idAutoComplete);
+            textBoxId.AutoCompleteCustomSource = source;
+            textBoxId.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBoxId.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            source = new AutoCompleteStringCollection();
+            source.AddRange(surnamesAutoComplete);
+            textBoxSurname.AutoCompleteCustomSource = source;
+            textBoxSurname.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBoxSurname.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
+
+        }
         private void populatePatientRooms()
         {
             Stack<PatientRoom> rooms = DbAdapter.getPatientRooms();
@@ -83,7 +152,56 @@ namespace RezerwacjaSal
 
         }
 
-        private void filterTable(String columnName, String value)
+        private void filterPatientsTable(String columnName, TextBox textBox)
+        {
+            // If already contains filter for certain column delete it
+            if (this.patientFilters.ContainsKey(columnName))
+            {
+                this.patientFilters.Remove(columnName);
+            }
+
+            // get original table
+            this.patientsTableFiltered = this.patientsTable.Copy();
+
+
+
+            // add new filter
+            this.patientFilters.Add(columnName, () => {
+
+
+                for (int i = this.patientsTableFiltered.Rows.Count - 1; i >= 0; i--)
+                {
+                    Console.WriteLine("Found: " + this.patientsTableFiltered.Rows[i][columnName].ToString() + " vs " + textBox.Text.ToString());
+
+                    if (!this.patientsTableFiltered.Rows[i][columnName].ToString().StartsWith(textBox.Text.ToString()))
+                    {
+                        Console.Write("Deleting " + this.patientsTableFiltered.Rows[i][columnName].ToString());
+                        this.patientsTableFiltered.Rows[i].Delete();
+                    }
+                }
+
+            });
+
+            
+            // For method in filterMethods
+            // do filtermethod
+            foreach (var item in this.patientFilters)
+            {
+                item.Value.Invoke();
+            }
+
+            Console.WriteLine("Found: " + patientsTableFiltered.Rows.Count + textBox.Text.ToString());
+
+            textBox.BackColor = (patientsTableFiltered.Rows.Count < 1) ?
+                 System.Drawing.Color.Red :
+                 textBox.BackColor = System.Drawing.SystemColors.Window;
+            
+         
+        
+        }
+
+
+        private void filterRoomsTable(String columnName, String value)
         {
             // If already contains filter for certain column delete it
             if (this.filters.ContainsKey(columnName))
@@ -130,13 +248,14 @@ namespace RezerwacjaSal
         private void ReservePatientRoom_Load(object sender, EventArgs e)
         {
             this.populatePatientRooms();
+            this.populatePatients();
         }
 
         private void comboBoxBulding_SelectedIndexChanged(object sender, EventArgs e)
         {
             String value = (this.comboBoxBulding.Text == "Wszystkie") ? "" : this.comboBoxBulding.Text;
    
-            this.filterTable("Budynek", value);
+            this.filterRoomsTable("Budynek", value);
         }
 
       
@@ -146,7 +265,19 @@ namespace RezerwacjaSal
             String value = (this.comboBoxInfectious.Text == "Tak") ? "1" : "0";
             value = (this.comboBoxInfectious.Text == "Wszystkie") ? "" : value;
 
-            this.filterTable("Zakaźna", value);
+            this.filterRoomsTable("Zakaźna", value);
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+
+           
+
+        }
+
+        private void textBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            this.filterPatientsTable("Imie", this.textBoxFirstName);
         }
     }
 
