@@ -420,7 +420,7 @@
             // buttonDelete
             // 
             this.buttonDelete.AllowDrop = true;
-            this.buttonDelete.Location = new System.Drawing.Point(865, 354);
+            this.buttonDelete.Location = new System.Drawing.Point(866, 354);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(110, 36);
             this.buttonDelete.TabIndex = 9;
@@ -432,7 +432,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 721);
+            this.ClientSize = new System.Drawing.Size(990, 721);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.panelAllPatientRoomReservations);

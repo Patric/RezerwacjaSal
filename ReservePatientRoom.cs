@@ -14,6 +14,7 @@ namespace RezerwacjaSal
     {
         private DataTable roomsTable;
         private DataTable roomsTableFiltered;
+
         private DataTable patientsTable;
         private DataTable patientsTableFiltered;
 
@@ -48,7 +49,7 @@ namespace RezerwacjaSal
 
         private void dataGridViewPatientRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+          
         }
 
         private void populatePatients()
@@ -74,10 +75,6 @@ namespace RezerwacjaSal
             }
 
 
-
-          
-            String[] sicknessesAutoComplete;
-
             String[] idAutoComplete = patientsTable
                     .AsEnumerable()
                     .Select<System.Data.DataRow, String>(x => x.Field<String>("Id"))
@@ -95,6 +92,10 @@ namespace RezerwacjaSal
                   .ToArray();
 
 
+            String[] sicknessesAutoComplete = patientsTable
+                   .AsEnumerable()
+                   .Select<System.Data.DataRow, String>(x => x.Field<String>("Choroba"))
+                   .ToArray();
 
 
             var source = new AutoCompleteStringCollection();
@@ -115,6 +116,13 @@ namespace RezerwacjaSal
             textBoxSurname.AutoCompleteCustomSource = source;
             textBoxSurname.AutoCompleteMode = AutoCompleteMode.Suggest;
             textBoxSurname.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
+            dataGridViewPatients.DataSource = this.patientsTable;
+            dataGridViewPatients.ReadOnly = true;
+            dataGridViewPatients.AutoGenerateColumns = true;
+            dataGridViewPatients.AutoResizeColumns();
+            dataGridViewPatients.Refresh();
 
 
 
@@ -152,16 +160,13 @@ namespace RezerwacjaSal
 
         }
 
-        private void filterPatientsTable(String columnName, TextBox textBox)
+        private void filterPatientsTable(String columnName, String value)
         {
             // If already contains filter for certain column delete it
             if (this.patientFilters.ContainsKey(columnName))
             {
                 this.patientFilters.Remove(columnName);
             }
-
-            // get original table
-            this.patientsTableFiltered = this.patientsTable.Copy();
 
 
 
@@ -171,18 +176,18 @@ namespace RezerwacjaSal
 
                 for (int i = this.patientsTableFiltered.Rows.Count - 1; i >= 0; i--)
                 {
-                    Console.WriteLine("Found: " + this.patientsTableFiltered.Rows[i][columnName].ToString() + " vs " + textBox.Text.ToString());
-
-                    if (!this.patientsTableFiltered.Rows[i][columnName].ToString().StartsWith(textBox.Text.ToString()))
+                    if (!this.patientsTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
                     {
-                        Console.Write("Deleting " + this.patientsTableFiltered.Rows[i][columnName].ToString());
                         this.patientsTableFiltered.Rows[i].Delete();
                     }
                 }
 
             });
 
-            
+            // get original table
+            this.patientsTableFiltered = this.patientsTable.Copy();
+
+
             // For method in filterMethods
             // do filtermethod
             foreach (var item in this.patientFilters)
@@ -190,14 +195,13 @@ namespace RezerwacjaSal
                 item.Value.Invoke();
             }
 
-            Console.WriteLine("Found: " + patientsTableFiltered.Rows.Count + textBox.Text.ToString());
+            dataGridViewPatients.DataSource = this.patientsTableFiltered;
+            dataGridViewPatients.ReadOnly = true;
+            dataGridViewPatients.AutoGenerateColumns = true;
+            dataGridViewPatients.AutoResizeColumns();
+            dataGridViewPatients.Refresh();
 
-            textBox.BackColor = (patientsTableFiltered.Rows.Count < 1) ?
-                 System.Drawing.Color.Red :
-                 textBox.BackColor = System.Drawing.SystemColors.Window;
-            
-         
-        
+
         }
 
 
@@ -270,14 +274,62 @@ namespace RezerwacjaSal
 
         private void textBoxId_TextChanged(object sender, EventArgs e)
         {
-
-           
-
+            this.filterPatientsTable("Id", this.textBoxId.Text);
         }
 
         private void textBoxFirstName_TextChanged(object sender, EventArgs e)
         {
-            this.filterPatientsTable("Imie", this.textBoxFirstName);
+            this.filterPatientsTable("Imie", this.textBoxFirstName.Text);
+        }
+
+        private void textBoxSurname_TextChanged(object sender, EventArgs e)
+        {
+            this.filterPatientsTable("Nazwisko", this.textBoxSurname.Text);
+
+        }
+
+       
+
+        private void labelFilters_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxIllness_TextChanged(object sender, EventArgs e)
+        {
+            this.filterPatientsTable("Choroba", this.textBoxIllness.Text);
+        }
+
+        private void textBoxRoomNr_TextChanged(object sender, EventArgs e)
+        {
+            this.filterRoomsTable("Numer sali", this.textBoxRoomNr.Text);
+        }
+
+        private void textBoxRoomNrRes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxReservationNr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewPatientRooms_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Console.WriteLine("Rowenter");
+           
+           
+            //Console.WriteLine(this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString());
+        }
+
+        private void dataGridViewPatientRooms_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dataGridViewPatientRooms.SelectedRows.Count > 0)
+            {
+                this.textBoxRoomNrRes.Text = this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString();
+            }
         }
     }
 
