@@ -16,5 +16,10 @@ namespace RezerwacjaSal
         {
             InitializeComponent();
         }
+
+        private void buttonUndo_Click(object sender, EventArgs e)
+        {
+            Navigator.navigateBack(this);
+        }
     }
 }

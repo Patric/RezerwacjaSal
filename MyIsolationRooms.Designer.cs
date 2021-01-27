@@ -102,6 +102,7 @@ namespace RezerwacjaSal
             this.buttonUndo.TabIndex = 7;
             this.buttonUndo.Text = "Cofnij";
             this.buttonUndo.UseVisualStyleBackColor = true;
+            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
             // 
             // MyIsolationRooms
             // 

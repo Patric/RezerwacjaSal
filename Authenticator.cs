@@ -41,5 +41,9 @@ namespace RezerwacjaSal
 
             
         }
+        public static void logout()
+        {
+            currentUser = null;
+        }
     }
 }

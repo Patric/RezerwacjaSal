@@ -47,6 +47,7 @@ namespace RezerwacjaSal
             this.buttonUndo.TabIndex = 0;
             this.buttonUndo.Text = "Cofnij";
             this.buttonUndo.UseVisualStyleBackColor = true;
+            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
             // 
             // buttonDelete
             // 
@@ -74,6 +75,7 @@ namespace RezerwacjaSal
             this.buttonReserve.TabIndex = 3;
             this.buttonReserve.Text = "Zarezerwuj izolatkę dla pacjenta";
             this.buttonReserve.UseVisualStyleBackColor = true;
+            this.buttonReserve.Click += new System.EventHandler(this.buttonReserve_Click);
             // 
             // labelTitle
             // 
