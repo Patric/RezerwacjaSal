@@ -119,13 +119,14 @@ namespace RezerwacjaSal
         private void populatePatientRooms()
         {
             Stack<PatientRoom> rooms = DbAdapter.getPatientRooms();
-            this.roomsTable = new DataTable();
+            this.roomsTable = new DataTable();             
             roomsTable.Columns.Add(new DataColumn("Numer sali"));
             roomsTable.Columns.Add(new DataColumn("Oddział"));
             roomsTable.Columns.Add(new DataColumn("Budynek"));
             roomsTable.Columns.Add(new DataColumn("Zakaźna"));
             roomsTable.Columns.Add(new DataColumn("Sprzęt"));
 
+            
 
 
 
@@ -322,6 +323,34 @@ namespace RezerwacjaSal
             {
                 this.textBoxRoomNrRes.Text = this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString();
             }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            var newReservation = new Reservation(
+                null,
+                this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString(),
+                this.dataGridViewPatientRooms.SelectedRows[0].Cells[1].Value.ToString(),
+                this.dataGridViewPatientRooms.SelectedRows[0].Cells[2].Value.ToString(),
+                this.dataGridViewPatients.SelectedRows[0].Cells[0].Value.ToString(),
+                this.dataGridViewPatients.SelectedRows[0].Cells[1].Value.ToString(),
+                this.dataGridViewPatients.SelectedRows[0].Cells[2].Value.ToString(),
+                this.dataGridViewPatients.SelectedRows[0].Cells[3].Value.ToString(),
+                this.dateTimePickerCheckInDate.Value.ToString(),
+                this.dateTimePickerCheckOutDate.Value.ToString());
+
+
+            DialogResult dialogResult = MessageBox.Show(newReservation.ToString(), "Czy chcesz dodać rezerwację z następującymi danymi?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // DbAdapter.addReservation(reservation)
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                // nothing
+            }
+
+           
         }
     }
 

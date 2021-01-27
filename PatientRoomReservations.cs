@@ -67,8 +67,11 @@ namespace RezerwacjaSal
             reservationsTable.Columns.Add(new DataColumn("Numer Rezerwacji"));
             reservationsTable.Columns.Add(new DataColumn("Numer sali"));
             reservationsTable.Columns.Add(new DataColumn("Oddział"));
+            reservationsTable.Columns.Add(new DataColumn("Budynek"));
+            reservationsTable.Columns.Add(new DataColumn("Id pacjenta"));
+            reservationsTable.Columns.Add(new DataColumn("Imie pacjenta"));
             reservationsTable.Columns.Add(new DataColumn("Nazwisko pacjenta"));
-            reservationsTable.Columns.Add(new DataColumn("Numer pacjenta"));
+            reservationsTable.Columns.Add(new DataColumn("Choroba"));
             reservationsTable.Columns.Add(new DataColumn("Data od"));
             reservationsTable.Columns.Add(new DataColumn("Data do"));
 
@@ -79,12 +82,15 @@ namespace RezerwacjaSal
                 reservationsTable.Rows.Add(
                     reservation.reservation_id,
                     reservation.room_number,
-                    null, // department
-                    null, //patient surname
-                    reservation.sick_id, //patient number
+                    reservation.department,
+                    reservation.building,
+                    reservation.sick_id,
+                    reservation.name,
+                    reservation.surname,
+                    reservation.illness,
                     reservation.date_from.Replace(" 00:00:00", ""),
                     reservation.date_to.Replace(" 00:00:00", "")
-                    );
+                    ); ;
             }
 
             dataGridViewAllPatientRoomReservations.DataSource = this.reservationsTable;

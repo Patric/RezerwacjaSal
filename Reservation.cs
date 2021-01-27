@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RezerwacjaSal
 {
-    public class Reservation
+    public class Reservation : FormattableString
     {
         public Reservation(string reservation_id, string room_number, string department, string building, string sick_id, string name, string surname, string illness, string date_from, string date_to)
         {
@@ -42,7 +42,40 @@ namespace RezerwacjaSal
 
         public string date_to { get; private set; }
 
+        public override string Format => throw new NotImplementedException();
 
+        public override int ArgumentCount => throw new NotImplementedException();
 
+        public override object GetArgument(int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object[] GetArguments()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string ToString(IFormatProvider formatProvider)
+        {
+            string[] reservation =
+            {
+            "Numer rezerwacji: " + this.reservation_id + "\n" +
+            "Numer sali: " + this.room_number + "\n" +
+            "Oddział: " + this.department + "\n" +
+            "Budynek " + this.building + "\n" +
+            "Numer pacjenta" + this.sick_id + "\n" +
+            "Imię pacjenta: " + this.name + "\n" +
+            "Nazwisko pacjenta: " +this.surname + "\n" +
+            "Choroba pacjenta: " + this.illness + "\n" +
+            "Data wpisu: " + this.date_from + "\n" +
+            "Przewidywana data wypisu: " + this.date_to + "\n"
+        };
+
+            return string.Concat(reservation);
+            
+
+         
+        }
     }
 }

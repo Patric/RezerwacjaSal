@@ -300,6 +300,7 @@
             this.buttonSave.TabIndex = 40;
             this.buttonSave.Text = "Zapisz";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxRoom
             // 

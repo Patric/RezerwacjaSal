@@ -77,7 +77,7 @@
             this.dataGridViewAllPatientRoomReservations.Location = new System.Drawing.Point(12, 312);
             this.dataGridViewAllPatientRoomReservations.Name = "dataGridViewAllPatientRoomReservations";
             this.dataGridViewAllPatientRoomReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAllPatientRoomReservations.Size = new System.Drawing.Size(848, 397);
+            this.dataGridViewAllPatientRoomReservations.Size = new System.Drawing.Size(1086, 397);
             this.dataGridViewAllPatientRoomReservations.TabIndex = 4;
             this.dataGridViewAllPatientRoomReservations.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAllPatientRoomReservations_CellClick);
             this.dataGridViewAllPatientRoomReservations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAllPatientRoomReservations_CellContentClick);
@@ -92,24 +92,26 @@
             this.panelAllPatientRoomReservations.Controls.Add(this.groupBox2);
             this.panelAllPatientRoomReservations.Location = new System.Drawing.Point(12, 12);
             this.panelAllPatientRoomReservations.Name = "panelAllPatientRoomReservations";
-            this.panelAllPatientRoomReservations.Size = new System.Drawing.Size(963, 281);
+            this.panelAllPatientRoomReservations.Size = new System.Drawing.Size(1086, 281);
             this.panelAllPatientRoomReservations.TabIndex = 5;
             // 
             // groupBoxMenu
             // 
             this.groupBoxMenu.Controls.Add(this.buttonBack);
+            this.groupBoxMenu.Controls.Add(this.buttonEdit);
+            this.groupBoxMenu.Controls.Add(this.buttonDelete);
             this.groupBoxMenu.Controls.Add(this.buttonNewReservation);
-            this.groupBoxMenu.Location = new System.Drawing.Point(779, 13);
+            this.groupBoxMenu.Location = new System.Drawing.Point(787, 13);
             this.groupBoxMenu.Name = "groupBoxMenu";
-            this.groupBoxMenu.Size = new System.Drawing.Size(165, 256);
+            this.groupBoxMenu.Size = new System.Drawing.Size(282, 256);
             this.groupBoxMenu.TabIndex = 47;
             this.groupBoxMenu.TabStop = false;
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(18, 67);
+            this.buttonBack.Location = new System.Drawing.Point(18, 188);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(126, 36);
+            this.buttonBack.Size = new System.Drawing.Size(248, 36);
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Text = "Powrót";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -117,9 +119,9 @@
             // 
             // buttonNewReservation
             // 
-            this.buttonNewReservation.Location = new System.Drawing.Point(18, 19);
+            this.buttonNewReservation.Location = new System.Drawing.Point(18, 23);
             this.buttonNewReservation.Name = "buttonNewReservation";
-            this.buttonNewReservation.Size = new System.Drawing.Size(126, 36);
+            this.buttonNewReservation.Size = new System.Drawing.Size(248, 36);
             this.buttonNewReservation.TabIndex = 6;
             this.buttonNewReservation.Text = "Nowa rezerwacja";
             this.buttonNewReservation.UseVisualStyleBackColor = true;
@@ -410,9 +412,9 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(865, 312);
+            this.buttonEdit.Location = new System.Drawing.Point(18, 77);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(110, 36);
+            this.buttonEdit.Size = new System.Drawing.Size(248, 36);
             this.buttonEdit.TabIndex = 8;
             this.buttonEdit.Text = "Edytuj";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -421,9 +423,9 @@
             // buttonDelete
             // 
             this.buttonDelete.AllowDrop = true;
-            this.buttonDelete.Location = new System.Drawing.Point(866, 354);
+            this.buttonDelete.Location = new System.Drawing.Point(18, 132);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(110, 36);
+            this.buttonDelete.Size = new System.Drawing.Size(248, 36);
             this.buttonDelete.TabIndex = 9;
             this.buttonDelete.Text = "Usuń";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -433,9 +435,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 721);
-            this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonEdit);
+            this.ClientSize = new System.Drawing.Size(1126, 721);
             this.Controls.Add(this.panelAllPatientRoomReservations);
             this.Controls.Add(this.dataGridViewAllPatientRoomReservations);
             this.Name = "PatientRoomReservations";
