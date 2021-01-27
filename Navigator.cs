@@ -48,7 +48,7 @@ namespace RezerwacjaSal
                 case 1:
                     {
                         // Powinien otwieraæ panel lekarza, który robimy
-                        currentRoot = new PatientRoomReservations();
+                        currentRoot = new DoctorsPanel();
                         break;
                     }
                   
@@ -120,7 +120,24 @@ namespace RezerwacjaSal
 
         }
 
+        public static void newLogin()
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
 
+                if (Application.OpenForms[i].Name.ToString().Equals("Login"))
+                {
+                    Application.OpenForms[i].Show();
+                    
+
+                }
+                else
+                {
+                    Application.OpenForms[i].Close();
+                }
+            }
+           
+        }
 
 
 

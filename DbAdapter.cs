@@ -252,6 +252,54 @@ namespace RezerwacjaSal
             return null;
 
         }
+        public static Stack<string> getEquipement()
+        {
+
+            try
+            {
+
+                string query = "SELECT name FROM eq_dict;"; // WHERE " rooms.available = true ;"
+
+
+                Console.WriteLine(query);
+
+
+
+                DataTable queryData = new DataTable();
+
+
+
+                using (var connection = new MySqlConnection(connectionString))
+
+
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))
+                {
+                    adapter.Fill(queryData);
+                }
+
+                Console.WriteLine(queryData);
+
+                Stack<string> eq = new Stack<string>();
+
+                foreach (DataRow dr in queryData.Rows)
+                {
+
+                    eq.Push(
+                        dr["name"].ToString());
+                }
+
+                return eq;
+
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message, "Wystąpił błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return null;
+
+        }
 
 
 

@@ -113,6 +113,7 @@
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Text = "Powrót";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonNewReservation
             // 
