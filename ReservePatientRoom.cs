@@ -25,6 +25,10 @@ namespace RezerwacjaSal
         {
             InitializeComponent();
 
+          
+         
+
+
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -52,6 +56,35 @@ namespace RezerwacjaSal
           
         }
 
+        private void populateAutoComplete(DataTable dataTable, List<TextBox> textBoxes)
+        {
+            try
+            {
+                String[] autoComplete;
+                for (int i = 0; i < textBoxes.Count - 1; i++)
+                {
+                    autoComplete = dataTable
+                    .AsEnumerable()
+                    .Select<System.Data.DataRow, String>(x => x.Field<String>(dataTable.Columns[i].ColumnName))
+                    .ToArray();
+
+                    var source = new AutoCompleteStringCollection();
+                    source.AddRange(autoComplete);
+                    textBoxes[i].AutoCompleteCustomSource = source;
+                    textBoxes[i].AutoCompleteMode = AutoCompleteMode.Suggest;
+                    textBoxes[i].AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Wystąpił błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
         private void populatePatients()
         {
             Stack<Patient> patients = DbAdapter.getPatients();
@@ -73,50 +106,6 @@ namespace RezerwacjaSal
                    patient.infectious
                 );
             }
-
-
-            String[] idAutoComplete = patientsTable
-                    .AsEnumerable()
-                    .Select<System.Data.DataRow, String>(x => x.Field<String>("Id"))
-                    .ToArray();
-
-            String[] namesAutoComplete = patientsTable
-                    .AsEnumerable()
-                    .Select<System.Data.DataRow, String>(x => x.Field<String>("Imie"))
-                    .ToArray();
-
-
-            String[] surnamesAutoComplete = patientsTable
-                  .AsEnumerable()
-                  .Select<System.Data.DataRow, String>(x => x.Field<String>("Nazwisko"))
-                  .ToArray();
-
-
-            String[] sicknessesAutoComplete = patientsTable
-                   .AsEnumerable()
-                   .Select<System.Data.DataRow, String>(x => x.Field<String>("Choroba"))
-                   .ToArray();
-
-
-            var source = new AutoCompleteStringCollection();
-            source.AddRange(namesAutoComplete);
-            textBoxFirstName.AutoCompleteCustomSource = source;
-            textBoxFirstName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            textBoxFirstName.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-
-            source = new AutoCompleteStringCollection();
-            source.AddRange(idAutoComplete);
-            textBoxId.AutoCompleteCustomSource = source;
-            textBoxId.AutoCompleteMode = AutoCompleteMode.Suggest;
-            textBoxId.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-            source = new AutoCompleteStringCollection();
-            source.AddRange(surnamesAutoComplete);
-            textBoxSurname.AutoCompleteCustomSource = source;
-            textBoxSurname.AutoCompleteMode = AutoCompleteMode.Suggest;
-            textBoxSurname.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
 
             dataGridViewPatients.DataSource = this.patientsTable;
             dataGridViewPatients.ReadOnly = true;
@@ -253,6 +242,13 @@ namespace RezerwacjaSal
         {
             this.populatePatientRooms();
             this.populatePatients();
+            var equipement = DbAdapter.getEquipement();
+            foreach (var eq in equipement)
+            {
+                this.checkedListBoxEquipment.Items.Add(eq);
+            }
+            this.populateAutoComplete(this.patientsTable, new List<TextBox>(){this.textBoxId , this.textBoxFirstName, this.textBoxSurname, this.textBoxIllness});
+
         }
 
         private void comboBoxBulding_SelectedIndexChanged(object sender, EventArgs e)
@@ -318,10 +314,6 @@ namespace RezerwacjaSal
         private void dataGridViewPatientRooms_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
 
-            Console.WriteLine("Rowenter");
-           
-           
-            //Console.WriteLine(this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString());
         }
 
         private void dataGridViewPatientRooms_CellClick(object sender, DataGridViewCellEventArgs e)

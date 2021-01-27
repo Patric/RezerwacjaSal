@@ -66,7 +66,12 @@ namespace RezerwacjaSal
             try
             {
 
-                string query = "Select * FROM reservations WHERE doctor_id = '" + Authenticator.currentUser.external_id.ToString() + "';";
+                string query = "SELECT reservation_id, reservations.room_number, department, building, patients.id, patients.name, patients.surname, patients.illness, reservations.date_from, reservations.date_to " +
+                                    "FROM reservations " +
+                                    "LEFT JOIN rooms ON reservations.room_number = rooms.room_number " +
+                                    "LEFT JOIN patients ON reservations.sick_id = patients.id " +
+                                    "WHERE doctor_id = " + Authenticator.currentUser.external_id;
+                  
    
                 Console.WriteLine(query);
                 DataTable queryData = new DataTable();
@@ -82,10 +87,15 @@ namespace RezerwacjaSal
                     reservations.Push(new Reservation(
                         dr["reservation_id"].ToString(), 
                         dr["room_number"].ToString(),
+                        dr["department"].ToString(),
+                        dr["building"].ToString(), 
+                        dr["id"].ToString(), 
+                        dr["name"].ToString(),
+                        dr["surname"].ToString(),
+                        dr["illness"].ToString(),
                         dr["date_from"].ToString(),
-                        dr["date_to"].ToString(), 
-                        dr["doctor_id"].ToString(), 
-                        dr["sick_id"].ToString()));
+                        dr["date_to"].ToString()
+                        ));
                 }
 
                     return reservations;
