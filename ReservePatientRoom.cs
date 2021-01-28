@@ -15,6 +15,9 @@ namespace RezerwacjaSal
         private DataTable roomsTable;
         private DataTable roomsTableFiltered;
 
+        private DataTable roomsOccupancyTable;
+        private DataTable roomsOccupancyTableFiltered;
+
         private DataTable patientsTable;
         private DataTable patientsTableFiltered;
 
@@ -24,10 +27,6 @@ namespace RezerwacjaSal
         public ReservePatientRoom()
         {
             InitializeComponent();
-
-          
-         
-
 
         }
 
@@ -116,25 +115,35 @@ namespace RezerwacjaSal
 
 
         }
+
+
         private void populatePatientRooms()
         {
-            Stack<RoomOccupancyDTO> rooms = DbAdapter.getPatientRooms();
-            this.roomsTable = new DataTable();             
-            roomsTable.Columns.Add(new DataColumn("Numer sali"));
-            roomsTable.Columns.Add(new DataColumn("Oddział"));
-            roomsTable.Columns.Add(new DataColumn("Budynek"));
-            roomsTable.Columns.Add(new DataColumn("Rezerwacja od")); 
-            roomsTable.Columns.Add(new DataColumn("Rezerwacja do"));
+
+
+
+
+            Stack<PatientRoom> rooms = DbAdapter.getPatientRooms();
+            this.roomsTable= new DataTable();
+            this.roomsTable.Columns.Add(new DataColumn("Numer sali"));
+            this.roomsTable.Columns.Add(new DataColumn("Oddział"));
+            this.roomsTable.Columns.Add(new DataColumn("Budynek"));
+            this.roomsTable.Columns.Add(new DataColumn("Sprzęt"));
+
+
             foreach (var room in rooms)
             {
                 roomsTable.Rows.Add(
-                    room.room_number,
+                   room.room_number,
                    room.department,
                    room.building,
-                   room.date_from,
-                   room.date_to
+                   null
                 );
             }
+
+            // Filter table with data
+
+
 
             dataGridViewPatientRooms.DataSource = this.roomsTable;
             dataGridViewPatientRooms.ReadOnly = true;
@@ -142,32 +151,104 @@ namespace RezerwacjaSal
             dataGridViewPatientRooms.AutoResizeColumns();
             dataGridViewPatientRooms.Refresh();
 
+        }
+
+
+        private void populateRoomsOccupancy()
+        {
+            Stack<RoomOccupancyDTO> roomsOccupancy = DbAdapter.getPatientRoomsOccupancy(
+               this.dateTimePickerCheckInDate.Value,
+               this.dateTimePickerCheckOutDate.Value);
+
+            this.roomsOccupancyTable = new DataTable();
+            this.roomsOccupancyTable.Columns.Add(new DataColumn("Numer sali"));
+            this.roomsOccupancyTable.Columns.Add(new DataColumn("Oddział"));
+            this.roomsOccupancyTable.Columns.Add(new DataColumn("Budynek"));
+            this.roomsOccupancyTable.Columns.Add(new DataColumn("Rezerwacja od"));
+            this.roomsOccupancyTable.Columns.Add(new DataColumn("Rezerwacja do"));
+
+            var keys = new DataColumn[2];
+            keys[0] = this.roomsOccupancyTable.Columns[0];
+            this.roomsOccupancyTable.PrimaryKey = keys;
+            foreach (var roomOccupancy in roomsOccupancy)
+            {
+                this.roomsOccupancyTable.Rows.Add(
+                   roomOccupancy.room_number,
+                   roomOccupancy.department,
+                   roomOccupancy.building,
+                   roomOccupancy.date_from,
+                   roomOccupancy.date_to
+                );
+            }
+
+
+        }
+
+        private void filterRoomsOccupancy()
+        {
+            var occupied_room_nrs = this.roomsOccupancyTable.AsEnumerable().Where(x =>
+            (DateTime.Parse(x["Rezerwacja do"].ToString()) >= this.dateTimePickerCheckOutDate.Value
+            &&
+            DateTime.Parse(x["Rezerwacja od"].ToString()) <= this.dateTimePickerCheckInDate.Value
+            )
+            ||
+            (
+            DateTime.Parse(x["Rezerwacja do"].ToString()) <= this.dateTimePickerCheckOutDate.Value 
+            && 
+            DateTime.Parse(x["Rezerwacja od"].ToString()) >= this.dateTimePickerCheckOutDate.Value 
+            )
+            ||
+            (
+            DateTime.Parse(x["Rezerwacja od"].ToString()) <= this.dateTimePickerCheckInDate.Value
+            &&
+            DateTime.Parse(x["Rezerwacja do"].ToString()) >= this.dateTimePickerCheckInDate.Value
+            )
+           );
+           
+           for (int i = this.roomsTableFiltered.Rows.Count - 1; i >= 0; i--)
+            {
+                foreach (var item in occupied_room_nrs)
+                {
+         
+                        if (item[0].ToString() == this.roomsTableFiltered.Rows[i]["Numer sali"].ToString())
+                        {
+                        this.roomsTableFiltered.Rows[i].Delete();
+                        break;
+                        }
+
+                }
+            }
 
         }
 
         private void filterPatientsTable(String columnName, String value)
         {
-            // If already contains filter for certain column delete it
-            if (this.patientFilters.ContainsKey(columnName))
-            {
-                this.patientFilters.Remove(columnName);
-            }
-
-
-
             // add new filter
-            this.patientFilters.Add(columnName, () => {
-
-
-                for (int i = this.patientsTableFiltered.Rows.Count - 1; i >= 0; i--)
+            if (columnName != null)
+            {
+                // If already contains filter for certain column delete it
+                if (this.patientFilters.ContainsKey(columnName))
                 {
-                    if (!this.patientsTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
-                    {
-                        this.patientsTableFiltered.Rows[i].Delete();
-                    }
+                    this.patientFilters.Remove(columnName);
                 }
 
-            });
+
+
+                // add new filter
+                this.patientFilters.Add(columnName, () =>
+                {
+
+
+                    for (int i = this.patientsTableFiltered.Rows.Count - 1; i >= 0; i--)
+                    {
+                        if (!this.patientsTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
+                        {
+                            this.patientsTableFiltered.Rows[i].Delete();
+                        }
+                    }
+
+                });
+            }
 
             // get original table
             this.patientsTableFiltered = this.patientsTable.Copy();
@@ -189,30 +270,32 @@ namespace RezerwacjaSal
 
         }
 
-
         private void filterRoomsTable(String columnName, String value)
         {
-            // If already contains filter for certain column delete it
-            if (this.filters.ContainsKey(columnName))
+            // add new filter
+            if (columnName != null)
+            {
+                // If already contains filter for certain column delete it
+                if (this.filters.ContainsKey(columnName))
             {
                 this.filters.Remove(columnName);
             }
 
+           
+                this.filters.Add(columnName, () => {
 
-       
-            // add new filter
-            this.filters.Add(columnName, () => {
-            
 
-                for (int i = this.roomsTableFiltered.Rows.Count - 1; i >= 0 ; i--)
-                {      
-                    if (!this.roomsTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
+                    for (int i = this.roomsTableFiltered.Rows.Count - 1; i >= 0; i--)
                     {
-                        this.roomsTableFiltered.Rows[i].Delete();
+                        if (!this.roomsTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
+                        {
+                            this.roomsTableFiltered.Rows[i].Delete();
+                        }
                     }
-                }
-            
-            });
+
+                });
+            }
+           
 
             // get original table
             this.roomsTableFiltered = this.roomsTable.Copy();
@@ -225,14 +308,14 @@ namespace RezerwacjaSal
                 item.Value.Invoke();
             }
 
+            this.filterRoomsOccupancy();
+
             dataGridViewPatientRooms.DataSource = this.roomsTableFiltered;
             dataGridViewPatientRooms.ReadOnly = true;
             dataGridViewPatientRooms.AutoGenerateColumns = true;
             dataGridViewPatientRooms.AutoResizeColumns();
             dataGridViewPatientRooms.Refresh();
         }
-
-
 
         private void ReservePatientRoom_Load(object sender, EventArgs e)
         {
@@ -244,7 +327,7 @@ namespace RezerwacjaSal
                 this.checkedListBoxEquipment.Items.Add(eq);
             }
             this.populateAutoComplete(this.patientsTable, new List<TextBox>(){this.textBoxId , this.textBoxFirstName, this.textBoxSurname, this.textBoxIllness});
-
+            this.populateRoomsOccupancy();
         }
 
         private void comboBoxBulding_SelectedIndexChanged(object sender, EventArgs e)
@@ -255,7 +338,6 @@ namespace RezerwacjaSal
         }
 
       
-
         private void textBoxId_TextChanged(object sender, EventArgs e)
         {
             this.filterPatientsTable("Id", this.textBoxId.Text);
@@ -338,6 +420,18 @@ namespace RezerwacjaSal
             }
 
            
+        }
+
+        private void dateTimePickerCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Check in date changed");
+            this.filterRoomsTable(null, null);
+        }
+
+        private void dateTimePickerCheckOutDate_ValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Check out date changed");
+            this.filterRoomsTable(null, null);
         }
     }
 

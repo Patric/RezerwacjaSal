@@ -8,7 +8,7 @@ namespace RezerwacjaSal
 {
     public class RoomOccupancyDTO
     {
-        public RoomOccupancyDTO(string room_number, string department, string building,  string date_from, string date_to)
+        public RoomOccupancyDTO(string room_number, string department, string building, DateTime date_from, DateTime date_to)
         {
             this.room_number = room_number;
             this.department = department;
@@ -20,7 +20,7 @@ namespace RezerwacjaSal
         public string room_number { get; set; }
         public string department { get; set; }
         public string building { get; set; }
-        public string date_from { get; set; }
-        public string date_to { get; set; }
+        public DateTime date_from { get; set; }
+        public DateTime date_to { get; set; }
     }
 }

@@ -154,6 +154,7 @@
             this.dateTimePickerCheckInDate.Name = "dateTimePickerCheckInDate";
             this.dateTimePickerCheckInDate.Size = new System.Drawing.Size(136, 20);
             this.dateTimePickerCheckInDate.TabIndex = 13;
+            this.dateTimePickerCheckInDate.ValueChanged += new System.EventHandler(this.dateTimePickerCheckInDate_ValueChanged);
             // 
             // dateTimePickerCheckOutDate
             // 
@@ -161,6 +162,7 @@
             this.dateTimePickerCheckOutDate.Name = "dateTimePickerCheckOutDate";
             this.dateTimePickerCheckOutDate.Size = new System.Drawing.Size(136, 20);
             this.dateTimePickerCheckOutDate.TabIndex = 14;
+            this.dateTimePickerCheckOutDate.ValueChanged += new System.EventHandler(this.dateTimePickerCheckOutDate_ValueChanged);
             // 
             // labelBuilding
             // 

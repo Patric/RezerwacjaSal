@@ -136,6 +136,9 @@ namespace RezerwacjaSal
 
         private void filterTable(String columnName, String value)
         {
+            // add new filter
+            if (columnName != null)
+            {
                 // If already contains filter for certain column delete it
                 if (this.filters.ContainsKey(columnName))
                 {
@@ -143,23 +146,25 @@ namespace RezerwacjaSal
                 }
 
 
-            // get original table
-            this.reservationTableFiltered = this.reservationsTable.Copy();
+                // get original table
+                this.reservationTableFiltered = this.reservationsTable.Copy();
 
 
-            // add new filter
-            this.filters.Add(columnName, () => {
-                for (int i = 0; i < this.reservationTableFiltered.Rows.Count; i++)
+                // add new filter
+                this.filters.Add(columnName, () =>
                 {
-                    if (!this.reservationTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
+                    for (int i = 0; i < this.reservationTableFiltered.Rows.Count; i++)
                     {
+                        if (!this.reservationTableFiltered.Rows[i][columnName].ToString().StartsWith(value))
+                        {
 
-                        this.reservationTableFiltered.Rows[i].Delete();
-                      
+                            this.reservationTableFiltered.Rows[i].Delete();
 
+
+                        }
                     }
-                }
-            });
+                });
+            }
 
 
        
