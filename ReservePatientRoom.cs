@@ -16,7 +16,6 @@ namespace RezerwacjaSal
         private DataTable roomsTableFiltered;
 
         private DataTable roomsOccupancyTable;
-        private DataTable roomsOccupancyTableFiltered;
 
         private DataTable patientsTable;
         private DataTable patientsTableFiltered;
@@ -143,7 +142,7 @@ namespace RezerwacjaSal
 
             // Filter table with data
 
-
+          
 
             dataGridViewPatientRooms.DataSource = this.roomsTable;
             dataGridViewPatientRooms.ReadOnly = true;
@@ -328,6 +327,7 @@ namespace RezerwacjaSal
             }
             this.populateAutoComplete(this.patientsTable, new List<TextBox>(){this.textBoxId , this.textBoxFirstName, this.textBoxSurname, this.textBoxIllness});
             this.populateRoomsOccupancy();
+           // this.filterPatientsTable(null, null);
         }
 
         private void comboBoxBulding_SelectedIndexChanged(object sender, EventArgs e)
@@ -409,7 +409,7 @@ namespace RezerwacjaSal
                 this.dateTimePickerCheckOutDate.Value.ToString());
 
 
-            DialogResult dialogResult = MessageBox.Show(newReservation.ToString(), "Czy chcesz dodać rezerwację z następującymi danymi?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz dodać rezerwację z następującymi danymi? \n \n" + newReservation.ToString(), "Dodawanie rezerwacji", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 DbAdapter.addReservation(newReservation);

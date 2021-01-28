@@ -438,7 +438,40 @@ namespace RezerwacjaSal
 
         }
 
-     
+        public static string convertDate(string data)
+        {
+           // '2/1/2021 3:17:05 PM'
+                var poprawa = data.Split(' ')[0];
+            var listaDwa = poprawa.Split('/');
+            string lista="";
+           
+            lista += listaDwa[2];
+            lista += "-";
+            lista += listaDwa[0];
+            lista += "-";
+            lista += listaDwa[1];
+            return lista;
+        }
+        public static void deleteReservation(string id)
+        {
+
+        try { 
+
+            DataTable queryData = new DataTable();
+            var query = " DELETE FROM `reservations` WHERE `reservations`.`reservation_id` = "+id;
+            Console.WriteLine(query);
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                adapter.Fill(queryData);
+            }
+            MessageBox.Show("Usunięto rezerwację", "Rezerwacja została pomyślnie usunięta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message, "Wystąpił błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 
