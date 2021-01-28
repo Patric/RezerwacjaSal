@@ -65,6 +65,8 @@
             this.labelReservePatientRoom = new System.Windows.Forms.Label();
             this.dataGridViewPatientRooms = new System.Windows.Forms.DataGridView();
             this.dataGridViewPatients = new System.Windows.Forms.DataGridView();
+            this.textBoxDepartment = new System.Windows.Forms.TextBox();
+            this.labelDepartment = new System.Windows.Forms.Label();
             this.panelReservePatientRoom.SuspendLayout();
             this.groupBoxRequirements.SuspendLayout();
             this.groupBoxReservationData.SuspendLayout();
@@ -85,6 +87,8 @@
             // 
             // groupBoxRequirements
             // 
+            this.groupBoxRequirements.Controls.Add(this.labelDepartment);
+            this.groupBoxRequirements.Controls.Add(this.textBoxDepartment);
             this.groupBoxRequirements.Controls.Add(this.labelEquipment);
             this.groupBoxRequirements.Controls.Add(this.checkedListBoxEquipment);
             this.groupBoxRequirements.Controls.Add(this.labelRoom_number);
@@ -154,6 +158,7 @@
             this.dateTimePickerCheckInDate.Name = "dateTimePickerCheckInDate";
             this.dateTimePickerCheckInDate.Size = new System.Drawing.Size(136, 20);
             this.dateTimePickerCheckInDate.TabIndex = 13;
+            this.dateTimePickerCheckInDate.Value = new System.DateTime(2021, 1, 28, 21, 28, 0, 0);
             this.dateTimePickerCheckInDate.ValueChanged += new System.EventHandler(this.dateTimePickerCheckInDate_ValueChanged);
             // 
             // dateTimePickerCheckOutDate
@@ -454,6 +459,25 @@
             this.dataGridViewPatients.Size = new System.Drawing.Size(418, 387);
             this.dataGridViewPatients.TabIndex = 26;
             // 
+            // textBoxDepartment
+            // 
+            this.textBoxDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxDepartment.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxDepartment.Location = new System.Drawing.Point(168, 89);
+            this.textBoxDepartment.Name = "textBoxDepartment";
+            this.textBoxDepartment.Size = new System.Drawing.Size(136, 20);
+            this.textBoxDepartment.TabIndex = 52;
+            this.textBoxDepartment.TextChanged += new System.EventHandler(this.textBoxDepartment_TextChanged);
+            // 
+            // labelDepartment
+            // 
+            this.labelDepartment.AutoSize = true;
+            this.labelDepartment.Location = new System.Drawing.Point(165, 73);
+            this.labelDepartment.Name = "labelDepartment";
+            this.labelDepartment.Size = new System.Drawing.Size(44, 13);
+            this.labelDepartment.TabIndex = 53;
+            this.labelDepartment.Text = "Oddział";
+            // 
             // ReservePatientRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,7 +506,6 @@
         private System.Windows.Forms.Panel panelReservePatientRoom;
         private System.Windows.Forms.Label labelCheckOutDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerCheckOutDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerCheckInDate;
         private System.Windows.Forms.Label labelCheckInDate;
         private System.Windows.Forms.Label labelReservePatientRoom;
         private System.Windows.Forms.DataGridView dataGridViewPatientRooms;
@@ -516,5 +539,8 @@
         private System.Windows.Forms.TextBox textBoxRoomNr;
         private System.Windows.Forms.Label labelEquipment;
         private System.Windows.Forms.CheckedListBox checkedListBoxEquipment;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCheckInDate;
+        private System.Windows.Forms.Label labelDepartment;
+        private System.Windows.Forms.TextBox textBoxDepartment;
     }
 }

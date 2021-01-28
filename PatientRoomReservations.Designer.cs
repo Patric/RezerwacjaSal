@@ -32,6 +32,8 @@
             this.panelAllPatientRoomReservations = new System.Windows.Forms.Panel();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonNewReservation = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.textBoxPatientPESEL = new System.Windows.Forms.TextBox();
             this.textBoxPatientSurname = new System.Windows.Forms.TextBox();
             this.labelPatientPESEL = new System.Windows.Forms.Label();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllPatientRoomReservations)).BeginInit();
             this.panelAllPatientRoomReservations.SuspendLayout();
             this.groupBoxMenu.SuspendLayout();
@@ -75,6 +75,7 @@
             this.dataGridViewAllPatientRoomReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAllPatientRoomReservations.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewAllPatientRoomReservations.Location = new System.Drawing.Point(12, 312);
+            this.dataGridViewAllPatientRoomReservations.MultiSelect = false;
             this.dataGridViewAllPatientRoomReservations.Name = "dataGridViewAllPatientRoomReservations";
             this.dataGridViewAllPatientRoomReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAllPatientRoomReservations.Size = new System.Drawing.Size(1086, 397);
@@ -116,6 +117,27 @@
             this.buttonBack.Text = "Powrót";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(18, 77);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(248, 36);
+            this.buttonEdit.TabIndex = 8;
+            this.buttonEdit.Text = "Edytuj";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.AllowDrop = true;
+            this.buttonDelete.Location = new System.Drawing.Point(18, 132);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(248, 36);
+            this.buttonDelete.TabIndex = 9;
+            this.buttonDelete.Text = "Usuń";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonNewReservation
             // 
@@ -409,27 +431,6 @@
             this.labelPatientPESEL.Size = new System.Drawing.Size(85, 13);
             this.labelPatientPESEL.TabIndex = 32;
             this.labelPatientPESEL.Text = "PESEL pacjenta";
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(18, 77);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(248, 36);
-            this.buttonEdit.TabIndex = 8;
-            this.buttonEdit.Text = "Edytuj";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.AllowDrop = true;
-            this.buttonDelete.Location = new System.Drawing.Point(18, 132);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(248, 36);
-            this.buttonDelete.TabIndex = 9;
-            this.buttonDelete.Text = "Usuń";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // PatientRoomReservations
             // 

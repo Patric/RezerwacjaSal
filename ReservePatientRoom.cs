@@ -166,9 +166,7 @@ namespace RezerwacjaSal
             this.roomsOccupancyTable.Columns.Add(new DataColumn("Rezerwacja od"));
             this.roomsOccupancyTable.Columns.Add(new DataColumn("Rezerwacja do"));
 
-            var keys = new DataColumn[2];
-            keys[0] = this.roomsOccupancyTable.Columns[0];
-            this.roomsOccupancyTable.PrimaryKey = keys;
+ 
             foreach (var roomOccupancy in roomsOccupancy)
             {
                 this.roomsOccupancyTable.Rows.Add(
@@ -186,15 +184,15 @@ namespace RezerwacjaSal
         private void filterRoomsOccupancy()
         {
             var occupied_room_nrs = this.roomsOccupancyTable.AsEnumerable().Where(x =>
-            (DateTime.Parse(x["Rezerwacja do"].ToString()) >= this.dateTimePickerCheckOutDate.Value
+            (DateTime.Parse(x["Rezerwacja do"].ToString()) <= this.dateTimePickerCheckOutDate.Value
             &&
-            DateTime.Parse(x["Rezerwacja od"].ToString()) <= this.dateTimePickerCheckInDate.Value
+            DateTime.Parse(x["Rezerwacja od"].ToString()) >= this.dateTimePickerCheckInDate.Value
             )
             ||
             (
-            DateTime.Parse(x["Rezerwacja do"].ToString()) <= this.dateTimePickerCheckOutDate.Value 
+            DateTime.Parse(x["Rezerwacja do"].ToString()) >= this.dateTimePickerCheckOutDate.Value 
             && 
-            DateTime.Parse(x["Rezerwacja od"].ToString()) >= this.dateTimePickerCheckOutDate.Value 
+            DateTime.Parse(x["Rezerwacja od"].ToString()) <= this.dateTimePickerCheckOutDate.Value 
             )
             ||
             (
@@ -302,10 +300,14 @@ namespace RezerwacjaSal
 
             // For method in filterMethods
             // do filtermethod
-            foreach (var item in this.filters)
+            if(this.filters.Count > 0)
             {
-                item.Value.Invoke();
+                foreach (var item in this.filters)
+                {
+                    item.Value.Invoke();
+                }
             }
+           
 
             this.filterRoomsOccupancy();
 
@@ -318,6 +320,7 @@ namespace RezerwacjaSal
 
         private void ReservePatientRoom_Load(object sender, EventArgs e)
         {
+
             this.populatePatientRooms();
             this.populatePatients();
             var equipement = DbAdapter.getEquipement();
@@ -325,9 +328,18 @@ namespace RezerwacjaSal
             {
                 this.checkedListBoxEquipment.Items.Add(eq);
             }
-            this.populateAutoComplete(this.patientsTable, new List<TextBox>(){this.textBoxId , this.textBoxFirstName, this.textBoxSurname, this.textBoxIllness});
+            this.populateAutoComplete(this.patientsTable, new List<TextBox>()
+            {this.textBoxId , this.textBoxFirstName, this.textBoxSurname, this.textBoxIllness});
+            this.populateAutoComplete(this.roomsTable, new List<TextBox>() 
+            { this.textBoxRoomNr, this.textBoxDepartment });
+
+
             this.populateRoomsOccupancy();
-           // this.filterPatientsTable(null, null);
+            this.dateTimePickerCheckInDate.Value = System.DateTime.Now;
+            this.dateTimePickerCheckOutDate.Value = DateTime.Now;
+
+            this.dateTimePickerCheckInDate.MinDate = DateTime.Now;
+            this.dateTimePickerCheckOutDate.MinDate = DateTime.Now;
         }
 
         private void comboBoxBulding_SelectedIndexChanged(object sender, EventArgs e)
@@ -353,8 +365,6 @@ namespace RezerwacjaSal
             this.filterPatientsTable("Nazwisko", this.textBoxSurname.Text);
 
         }
-
-       
 
         private void labelFilters_Click(object sender, EventArgs e)
         {
@@ -413,6 +423,7 @@ namespace RezerwacjaSal
             if (dialogResult == DialogResult.Yes)
             {
                 DbAdapter.addReservation(newReservation);
+                Navigator.navigateTo(new PatientRoomReservations());
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -426,12 +437,21 @@ namespace RezerwacjaSal
         {
             Console.WriteLine("Check in date changed");
             this.filterRoomsTable(null, null);
+            this.dateTimePickerCheckOutDate.MinDate = this.dateTimePickerCheckInDate.Value;
         }
 
         private void dateTimePickerCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
             Console.WriteLine("Check out date changed");
             this.filterRoomsTable(null, null);
+          
+          
+
+        }
+
+        private void textBoxDepartment_TextChanged(object sender, EventArgs e)
+        {
+            this.filterRoomsTable("Oddział", this.textBoxDepartment.Text);
         }
     }
 
