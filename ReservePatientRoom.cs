@@ -423,7 +423,7 @@ namespace RezerwacjaSal
             if (dialogResult == DialogResult.Yes)
             {
                 DbAdapter.addReservation(newReservation);
-                Navigator.navigateTo(new PatientRoomReservations());
+                Navigator.navigateToChild(new PatientRoomReservations(), this);
             }
             else if (dialogResult == DialogResult.No)
             {
