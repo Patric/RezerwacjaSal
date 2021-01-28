@@ -170,6 +170,7 @@
     <Compile Include="RoomInformation.Designer.cs">
       <DependentUpon>RoomInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomOccupancyDTO.cs" />
     <Compile Include="testowy.cs">
       <SubType>Form</SubType>
     </Compile>

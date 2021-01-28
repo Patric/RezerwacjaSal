@@ -30,10 +30,10 @@
         {
             this.panelReservePatientRoom = new System.Windows.Forms.Panel();
             this.groupBoxRequirements = new System.Windows.Forms.GroupBox();
+            this.labelEquipment = new System.Windows.Forms.Label();
+            this.checkedListBoxEquipment = new System.Windows.Forms.CheckedListBox();
             this.labelRoom_number = new System.Windows.Forms.Label();
             this.textBoxRoomNr = new System.Windows.Forms.TextBox();
-            this.labelInfectious = new System.Windows.Forms.Label();
-            this.comboBoxInfectious = new System.Windows.Forms.ComboBox();
             this.labelCheckInDate = new System.Windows.Forms.Label();
             this.dateTimePickerCheckInDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerCheckOutDate = new System.Windows.Forms.DateTimePicker();
@@ -65,8 +65,6 @@
             this.labelReservePatientRoom = new System.Windows.Forms.Label();
             this.dataGridViewPatientRooms = new System.Windows.Forms.DataGridView();
             this.dataGridViewPatients = new System.Windows.Forms.DataGridView();
-            this.checkedListBoxEquipment = new System.Windows.Forms.CheckedListBox();
-            this.labelEquipment = new System.Windows.Forms.Label();
             this.panelReservePatientRoom.SuspendLayout();
             this.groupBoxRequirements.SuspendLayout();
             this.groupBoxReservationData.SuspendLayout();
@@ -91,8 +89,6 @@
             this.groupBoxRequirements.Controls.Add(this.checkedListBoxEquipment);
             this.groupBoxRequirements.Controls.Add(this.labelRoom_number);
             this.groupBoxRequirements.Controls.Add(this.textBoxRoomNr);
-            this.groupBoxRequirements.Controls.Add(this.labelInfectious);
-            this.groupBoxRequirements.Controls.Add(this.comboBoxInfectious);
             this.groupBoxRequirements.Controls.Add(this.labelCheckInDate);
             this.groupBoxRequirements.Controls.Add(this.dateTimePickerCheckInDate);
             this.groupBoxRequirements.Controls.Add(this.dateTimePickerCheckOutDate);
@@ -106,6 +102,23 @@
             this.groupBoxRequirements.TabStop = false;
             this.groupBoxRequirements.Text = "Wymagania";
             this.groupBoxRequirements.Enter += new System.EventHandler(this.groupBoxRequirements_Enter);
+            // 
+            // labelEquipment
+            // 
+            this.labelEquipment.AutoSize = true;
+            this.labelEquipment.Location = new System.Drawing.Point(338, 29);
+            this.labelEquipment.Name = "labelEquipment";
+            this.labelEquipment.Size = new System.Drawing.Size(91, 13);
+            this.labelEquipment.TabIndex = 51;
+            this.labelEquipment.Text = "Wymagany sprzęt";
+            // 
+            // checkedListBoxEquipment
+            // 
+            this.checkedListBoxEquipment.FormattingEnabled = true;
+            this.checkedListBoxEquipment.Location = new System.Drawing.Point(332, 45);
+            this.checkedListBoxEquipment.Name = "checkedListBoxEquipment";
+            this.checkedListBoxEquipment.Size = new System.Drawing.Size(306, 169);
+            this.checkedListBoxEquipment.TabIndex = 50;
             // 
             // labelRoom_number
             // 
@@ -125,29 +138,6 @@
             this.textBoxRoomNr.Size = new System.Drawing.Size(123, 20);
             this.textBoxRoomNr.TabIndex = 48;
             this.textBoxRoomNr.TextChanged += new System.EventHandler(this.textBoxRoomNr_TextChanged);
-            // 
-            // labelInfectious
-            // 
-            this.labelInfectious.AutoSize = true;
-            this.labelInfectious.Location = new System.Drawing.Point(166, 73);
-            this.labelInfectious.Name = "labelInfectious";
-            this.labelInfectious.Size = new System.Drawing.Size(49, 13);
-            this.labelInfectious.TabIndex = 44;
-            this.labelInfectious.Text = "Zakaźna";
-            // 
-            // comboBoxInfectious
-            // 
-            this.comboBoxInfectious.FormattingEnabled = true;
-            this.comboBoxInfectious.Items.AddRange(new object[] {
-            "Tak",
-            "Nie",
-            "Wszystkie"});
-            this.comboBoxInfectious.Location = new System.Drawing.Point(169, 89);
-            this.comboBoxInfectious.Name = "comboBoxInfectious";
-            this.comboBoxInfectious.Size = new System.Drawing.Size(135, 21);
-            this.comboBoxInfectious.TabIndex = 43;
-            this.comboBoxInfectious.Text = "Wszystkie";
-            this.comboBoxInfectious.SelectedIndexChanged += new System.EventHandler(this.comboBoxInfectious_SelectedIndexChanged);
             // 
             // labelCheckInDate
             // 
@@ -462,23 +452,6 @@
             this.dataGridViewPatients.Size = new System.Drawing.Size(418, 387);
             this.dataGridViewPatients.TabIndex = 26;
             // 
-            // checkedListBoxEquipment
-            // 
-            this.checkedListBoxEquipment.FormattingEnabled = true;
-            this.checkedListBoxEquipment.Location = new System.Drawing.Point(332, 45);
-            this.checkedListBoxEquipment.Name = "checkedListBoxEquipment";
-            this.checkedListBoxEquipment.Size = new System.Drawing.Size(306, 169);
-            this.checkedListBoxEquipment.TabIndex = 50;
-            // 
-            // labelEquipment
-            // 
-            this.labelEquipment.AutoSize = true;
-            this.labelEquipment.Location = new System.Drawing.Point(338, 29);
-            this.labelEquipment.Name = "labelEquipment";
-            this.labelEquipment.Size = new System.Drawing.Size(91, 13);
-            this.labelEquipment.TabIndex = 51;
-            this.labelEquipment.Text = "Wymagany sprzęt";
-            // 
             // ReservePatientRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,8 +504,6 @@
         private System.Windows.Forms.GroupBox groupBoxRequirements;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button button_back;
-        private System.Windows.Forms.Label labelInfectious;
-        private System.Windows.Forms.ComboBox comboBoxInfectious;
         private System.Windows.Forms.DataGridView dataGridViewPatients;
         private System.Windows.Forms.TextBox textBoxRoomNrRes;
         private System.Windows.Forms.Label labelRoomNumberRes;

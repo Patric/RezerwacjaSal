@@ -93,8 +93,8 @@ namespace RezerwacjaSal
                         dr["name"].ToString(),
                         dr["surname"].ToString(),
                         dr["illness"].ToString(),
-                        dr["date_from"].ToString(),
-                        dr["date_to"].ToString()
+                        dr["date_from"].ToString().Split(' ')[0],
+                        dr["date_to"].ToString().Split(' ')[0]
                         ));
                 }
 
@@ -153,13 +153,13 @@ namespace RezerwacjaSal
         }
 
 
-        public static Stack<PatientRoom> getPatientRooms()
+        public static Stack<RoomOccupancyDTO> getPatientRooms()
         {
 
             try
             {
 
-                string query = "Select * FROM rooms ;"; // WHERE " rooms.available = true ;"
+                string query = "SELECT reservations.*, department, building, type FROM reservations LEFT JOIN rooms USING(room_number) WHERE date_to > CURDATE() AND type = 0; ";
 
 
                 Console.WriteLine(query);
@@ -180,17 +180,18 @@ namespace RezerwacjaSal
 
                 Console.WriteLine(queryData);
 
-                Stack<PatientRoom> patientRooms = new Stack<PatientRoom>();
+                Stack<RoomOccupancyDTO> patientRooms = new Stack<RoomOccupancyDTO>();
 
                 foreach (DataRow dr in queryData.Rows)
                 {
 
-                    patientRooms.Push(new PatientRoom(
+                    patientRooms.Push(new RoomOccupancyDTO(
                         dr["room_number"].ToString(),
                         dr["department"].ToString(),
                         dr["building"].ToString(),
-                        dr["type"].ToString(),
-                        null));
+                        dr["date_from"].ToString(),
+                        dr["date_to"].ToString()
+                       ));
                         //dr["equipment"].ToString()));
                 }
 
@@ -311,28 +312,37 @@ namespace RezerwacjaSal
 
         }
 
+        public static void addReservation(Reservation reserv)
+        {
+            DataTable queryData = new DataTable();
 
+            string query= " INSERT INTO `reservations` (`reservation_id`, `room_number`, `date_from`, `date_to`, `doctor_id`, `sick_id`) " +
+                "VALUES(NULL, '"+reserv.room_number+ "', '" + convertDate(reserv.date_from) + "', '" + convertDate(reserv.date_to) + "', '" + Authenticator.currentUser.external_id.ToString() + "', '" + reserv.sick_id+ "');";
+            Console.WriteLine(query);
 
+            using (var connection = new MySqlConnection(connectionString))
+            { MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                adapter.Fill(queryData);
+            }
+                   
 
+        }
 
-
-
-
-
-
+        public static string convertDate(string data)
+        {
+           // '2/1/2021 3:17:05 PM'
+                var poprawa = data.Split(' ')[0];
+            var listaDwa = poprawa.Split('/');
+            string lista="";
+           
+            lista += listaDwa[2];
+            lista += "-";
+            lista += listaDwa[0];
+            lista += "-";
+            lista += listaDwa[1];
+            return lista;
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

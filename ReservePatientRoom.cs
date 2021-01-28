@@ -118,26 +118,21 @@ namespace RezerwacjaSal
         }
         private void populatePatientRooms()
         {
-            Stack<PatientRoom> rooms = DbAdapter.getPatientRooms();
+            Stack<RoomOccupancyDTO> rooms = DbAdapter.getPatientRooms();
             this.roomsTable = new DataTable();             
             roomsTable.Columns.Add(new DataColumn("Numer sali"));
             roomsTable.Columns.Add(new DataColumn("Oddział"));
             roomsTable.Columns.Add(new DataColumn("Budynek"));
-            roomsTable.Columns.Add(new DataColumn("Zakaźna"));
-            roomsTable.Columns.Add(new DataColumn("Sprzęt"));
-
-            
-
-
-
+            roomsTable.Columns.Add(new DataColumn("Rezerwacja od")); 
+            roomsTable.Columns.Add(new DataColumn("Rezerwacja do"));
             foreach (var room in rooms)
             {
                 roomsTable.Rows.Add(
                     room.room_number,
                    room.department,
                    room.building,
-                   room.type,
-                   room.equipment
+                   room.date_from,
+                   room.date_to
                 );
             }
 
@@ -261,14 +256,6 @@ namespace RezerwacjaSal
 
       
 
-        private void comboBoxInfectious_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String value = (this.comboBoxInfectious.Text == "Tak") ? "1" : "0";
-            value = (this.comboBoxInfectious.Text == "Wszystkie") ? "" : value;
-
-            this.filterRoomsTable("Zakaźna", value);
-        }
-
         private void textBoxId_TextChanged(object sender, EventArgs e)
         {
             this.filterPatientsTable("Id", this.textBoxId.Text);
@@ -343,7 +330,7 @@ namespace RezerwacjaSal
             DialogResult dialogResult = MessageBox.Show(newReservation.ToString(), "Czy chcesz dodać rezerwację z następującymi danymi?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                // DbAdapter.addReservation(reservation)
+                DbAdapter.addReservation(newReservation);
             }
             else if (dialogResult == DialogResult.No)
             {
