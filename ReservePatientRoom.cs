@@ -340,6 +340,9 @@ namespace RezerwacjaSal
 
             this.dateTimePickerCheckInDate.MinDate = DateTime.Now;
             this.dateTimePickerCheckOutDate.MinDate = DateTime.Now;
+            this.buttonSave.Enabled = false;
+            this.Refresh();
+
         }
 
         private void comboBoxBulding_SelectedIndexChanged(object sender, EventArgs e)
@@ -406,28 +409,36 @@ namespace RezerwacjaSal
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var newReservation = new Reservation(
-                null,
-                this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString(),
-                this.dataGridViewPatientRooms.SelectedRows[0].Cells[1].Value.ToString(),
-                this.dataGridViewPatientRooms.SelectedRows[0].Cells[2].Value.ToString(),
-                this.dataGridViewPatients.SelectedRows[0].Cells[0].Value.ToString(),
-                this.dataGridViewPatients.SelectedRows[0].Cells[1].Value.ToString(),
-                this.dataGridViewPatients.SelectedRows[0].Cells[2].Value.ToString(),
-                this.dataGridViewPatients.SelectedRows[0].Cells[3].Value.ToString(),
-                this.dateTimePickerCheckInDate.Value.ToString(),
-                this.dateTimePickerCheckOutDate.Value.ToString());
-
-
-            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz dodać rezerwację z następującymi danymi? \n \n" + newReservation.ToString(), "Dodawanie rezerwacji", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                DbAdapter.addReservation(newReservation);
-                Navigator.navigateToChild(new PatientRoomReservations(), this);
+                var newReservation = new Reservation(
+                    null,
+                    this.dataGridViewPatientRooms.SelectedRows[0].Cells[0].Value.ToString(),
+                    this.dataGridViewPatientRooms.SelectedRows[0].Cells[1].Value.ToString(),
+                    this.dataGridViewPatientRooms.SelectedRows[0].Cells[2].Value.ToString(),
+                    this.dataGridViewPatients.SelectedRows[0].Cells[0].Value.ToString(),
+                    this.dataGridViewPatients.SelectedRows[0].Cells[1].Value.ToString(),
+                    this.dataGridViewPatients.SelectedRows[0].Cells[2].Value.ToString(),
+                    this.dataGridViewPatients.SelectedRows[0].Cells[3].Value.ToString(),
+                    this.dateTimePickerCheckInDate.Value.ToString(),
+                    this.dateTimePickerCheckOutDate.Value.ToString());
+
+
+                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz dodać rezerwację z następującymi danymi? \n \n" + newReservation.ToString(), "Dodawanie rezerwacji", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DbAdapter.addReservation(newReservation);
+                    Navigator.navigateToChild(new PatientRoomReservations(), this);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // nothing
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            catch(Exception exc)
             {
-                // nothing
+                MessageBox.Show(exc.Message, "Wystąpił błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
            
@@ -452,6 +463,30 @@ namespace RezerwacjaSal
         private void textBoxDepartment_TextChanged(object sender, EventArgs e)
         {
             this.filterRoomsTable("Oddział", this.textBoxDepartment.Text);
+        }
+
+        private void dataGridViewPatientRooms_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.dataGridViewPatientRooms.SelectedRows.Count == 0 && this.dataGridViewPatients.SelectedRows.Count > 0 && this.textBoxRoomNrRes.Text.Length > 0)
+            {
+                this.buttonSave.Enabled = false;
+            }
+            else
+            {
+                this.buttonSave.Enabled = true;
+            }
+        }
+
+        private void dataGridViewPatients_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.dataGridViewPatientRooms.SelectedRows.Count == 0 && this.dataGridViewPatients.SelectedRows.Count > 0 && this.textBoxRoomNrRes.Text.Length > 0)
+            {
+                this.buttonSave.Enabled = false;
+            }
+            else
+            {
+                this.buttonSave.Enabled = true;
+            }
         }
     }
 
