@@ -44,7 +44,7 @@ namespace RezerwacjaSal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelTitle.Location = new System.Drawing.Point(12, 9);
+            this.labelTitle.Location = new System.Drawing.Point(85, 36);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(114, 13);
             this.labelTitle.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace RezerwacjaSal
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(1, 30);
+            this.labelLogin.Location = new System.Drawing.Point(74, 57);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(33, 13);
             this.labelLogin.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace RezerwacjaSal
             // labelPass
             // 
             this.labelPass.AutoSize = true;
-            this.labelPass.Location = new System.Drawing.Point(1, 52);
+            this.labelPass.Location = new System.Drawing.Point(74, 79);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(36, 13);
             this.labelPass.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace RezerwacjaSal
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(42, 30);
+            this.textBoxLogin.Location = new System.Drawing.Point(115, 57);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(100, 20);
             this.textBoxLogin.TabIndex = 3;
@@ -79,15 +79,16 @@ namespace RezerwacjaSal
             // 
             // textBoxPass
             // 
-            this.textBoxPass.Location = new System.Drawing.Point(42, 52);
+            this.textBoxPass.Location = new System.Drawing.Point(115, 79);
             this.textBoxPass.Name = "textBoxPass";
+            this.textBoxPass.PasswordChar = '●';
             this.textBoxPass.Size = new System.Drawing.Size(100, 20);
             this.textBoxPass.TabIndex = 4;
             this.textBoxPass.Text = "lekarz1";
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(4, 78);
+            this.buttonLogin.Location = new System.Drawing.Point(77, 105);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(138, 23);
             this.buttonLogin.TabIndex = 5;
@@ -99,13 +100,14 @@ namespace RezerwacjaSal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(184, 117);
+            this.ClientSize = new System.Drawing.Size(301, 181);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPass);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelPass);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.labelTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
