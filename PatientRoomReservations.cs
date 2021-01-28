@@ -117,7 +117,26 @@ namespace RezerwacjaSal
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            // DbAdapter.delete(reservation)
+            try { 
+           var index =  dataGridViewAllPatientRoomReservations.SelectedRows[0].Cells[0].Value.ToString();
+                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczoną rezerwację?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DbAdapter.deleteReservation(index);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+          catch(Exception eee)
+            {
+                Console.WriteLine(eee);
+            }
+          
+
+           
+            populateReservations();
 
 
         }

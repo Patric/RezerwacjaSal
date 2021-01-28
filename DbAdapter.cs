@@ -159,8 +159,9 @@ namespace RezerwacjaSal
             try
             {
 
-                string query = "SELECT reservations.*, department, building, type FROM reservations LEFT JOIN rooms USING(room_number) WHERE date_to > CURDATE() AND type = 0; ";
-
+                string query = "SELECT reservations.*, department, building, type FROM reservations LEFT" +
+                    " JOIN rooms USING(room_number) WHERE date_to < CURDATE() AND type = 0; ";
+              
 
                 Console.WriteLine(query);
 
@@ -341,6 +342,26 @@ namespace RezerwacjaSal
             lista += "-";
             lista += listaDwa[1];
             return lista;
+        }
+        public static void deleteReservation(string id)
+        {
+
+        try { 
+
+            DataTable queryData = new DataTable();
+            var query = " DELETE FROM `reservations` WHERE `reservations`.`reservation_id` = "+id;
+            Console.WriteLine(query);
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                adapter.Fill(queryData);
+            }
+            MessageBox.Show("Usunięto rezerwację", "Rezerwacja została pomyślnie usunięta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message, "Wystąpił błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 
