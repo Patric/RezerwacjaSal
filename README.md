@@ -81,7 +81,7 @@ W chwili obecnej szpital korzysta z systemu informatycznego, który zawiera info
 
 3. Diagram otoczenia biznesowego 
 
-![](Aspose.Words.bd5c15a6-b577-44ca-9fcc-988d37cafeb3.002.jpeg)
+![](model.jpeg)
 
 4. Aktorzy 
 
