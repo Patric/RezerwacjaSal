@@ -1,3 +1,6 @@
+# Room Reservation application for Academic Hospital - project for Software Engineering course using .NET with Windows Forms and MySQL database.
+
+
 # **POLITECHNIKA WARSZAWSKA** 
 
 **WYDZIAŁ MECHATRONIKI** 
