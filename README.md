@@ -142,7 +142,7 @@ W chwili obecnej szpital korzysta z systemu informatycznego, który zawiera info
 
 3. Diagram GUI 
 
-![](Aspose.Words.bd5c15a6-b577-44ca-9fcc-988d37cafeb3.025.jpeg)
+![](gui.jpg)
 
 3. Etap III – diagram klas i diagram sekwencji 
 1. Diagram klas 
