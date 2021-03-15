@@ -16,13 +16,13 @@ Project for Software Engineering course using .NET with Windows Forms and MySQL 
 
 Grupa IP 
 
-Michał Foltys 
+Michał Foltys - business analisys
 
-Przemysław Mazur 
+Przemysław Mazur - system project
 
-Patryk Sulej 
+Patryk Sulej - app development
 
-Paweł Manastyrski  
+Paweł Manastyrski  - app development
 
 Spis treści 
 
