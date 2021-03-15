@@ -16,13 +16,13 @@ Project for Software Engineering course using .NET with Windows Forms and MySQL 
 
 Grupa IP 
 
-Michał Foltys - analityk 
+Michał Foltys 
 
-Przemysław Mazur - projektant 
+Przemysław Mazur 
 
-Patryk Sulej - potężny programista 
+Patryk Sulej 
 
-Paweł Manastyrski – programista/projektant 
+Paweł Manastyrski  
 
 Spis treści 
 
