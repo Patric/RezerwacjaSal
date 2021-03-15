@@ -32,6 +32,8 @@ namespace RezerwacjaSal
         {
 
             Authenticator.login(textBoxLogin.Text.ToString(), textBoxPass.Text.ToString());
+            this.textBoxLogin.Clear();
+            this.textBoxPass.Clear();
             
         }
         private void Login_Load(object sender, EventArgs e)

@@ -21,5 +21,15 @@ namespace RezerwacjaSal
         {
 
         }
+
+        private void buttonReserve_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void buttonUndo_Click(object sender, EventArgs e)
+        {
+            Navigator.navigateBack(this);
+        }
     }
 }
